@@ -1,0 +1,29 @@
+blazedtel:
+  name: Blazed Telecom
+  title: Telecommunications
+  url: https://blazed.tel
+  image_url: https://blazed.sirv.com/logo/Beaker-Dark.png
+
+blazedsystems:
+  name: Blazed Systems BD
+  title: Network Solutions
+  url: https://blazed.systems
+  image_url: https://blazed.sirv.com/logo/Beaker-Cobalt.png
+
+blazedxyz:
+  name: Blazed Publishing BD
+  title: Publishing
+  url: https://blazed.xyz
+  image_url: https://blazed.sirv.com/logo/Beaker-Blue.png
+
+blazedlabs:
+  name: Blazed Labs LLC
+  title: Software Development
+  url: https://blazedlabs.com
+  image_url: https://blazed.sirv.com/logo/Beaker-Red.png
+
+blazedgames:
+  name: Concrete Games BD
+  title: Game Development
+  url: https://blazed.games
+  image_url: https://blazed.sirv.com/logo/Beaker-Rainbow.png
