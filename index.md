@@ -3,9 +3,9 @@ layout: page
 permalink: /
 ---
 
-### Collect. Connect. Create.
+### Welcome to the Blazed Nation!
 
-[[“There is nothing to writing. All you do is sit down at a typewriter and bleed.” <br><cite>--- Ernest Hemingway </cite>::lmn]]<mark>Welcome aboard!</mark> This project began development in late 2020 and is intended to serve three purposes:[[“Blogging is to writing what extreme sports are to athletics: more free-form, more accident-prone, less formal, more alive. It is, in many ways, writing out loud.” <br><cite>--- Andrew Sullivan</cite>::rmn]]
+[[“We turn Dreams into Reality.” <br><cite>--- Blazed Labs LLC </cite>::lmn]]<mark>Welcome aboard!</mark> This project began development in late 2020 and is intended to serve three purposes:[[“We are all the students, as well as the teachers.” <br><cite>--- Tyler Ruff</cite>::rmn]]
 
 1. [**Catalogue of Notes:**](/notes)
    - Note-taking within this project is powerful, utilizing several unique features such as: Roam-style double bracket link syntax to other notes, auto-generated backlinks, on-hover page previews, support for responsive margin-notes,
