@@ -9,11 +9,11 @@ author_bio:
 description: "A Digital Garden: Capturing my daily thoughts and progress, as well as curated ideas with unique synthesis—a personal zettelkasten."
 footer_description:
   'We turn Dreams into Reality.'
-notes_url: "https://blazed.city/"
+notes_url: "https://blazed.city"
 profile_pic: "https://brennanbrown.ca/img/avatar.jpg"
 favicon: /assets/img/favicon.png
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://blazed.city/" # the base hostname & protocol for your site, e.g. https://example.com
+url: "https://blazed.city" # the base hostname & protocol for your site, e.g. https://example.com
 theme_color: white
 encoding: utf-8
 

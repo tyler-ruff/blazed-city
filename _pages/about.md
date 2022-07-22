@@ -9,11 +9,11 @@ author: false
 <div class="row pt-5">
    <div class="col-lg-4">
       <h1 class="text-center">Who I Am</h1>
-      <img class="mx-auto d-block mb-3" src="https://brennanbrown.ca/img/avatar.jpg" height="300" alt="Blazed Labs">
+      <img class="mx-auto d-block mb-3" src="https://blazed.sirv.com/logo/john-mcmahon-ljjcoULkxL8-unsplash.jpg?w=300&h=300" height="300" alt="Blazed Labs">
       <p class="text-center">
             <a href="https://www.facebook.com/blznation"><img
                   src="https://img.shields.io/badge/-dev&#46;to-0A0A0A?style=flat&amp;labelColor=0A0A0A&amp;logo=facebook&amp;logoColor=white&amp;link=https://dev.to/brennan"
-                  alt="Dev.to"></a>
+                  alt="Facebook"></a>
             <a href="https://twitter.com/BlazedLabs"><img
                   src="https://img.shields.io/badge/-Twitter-1ca0f1?style=flat&amp;labelColor=1ca0f1&amp;logo=twitter&amp;logoColor=white&amp;link=https://twitter.com/brennankbrown"
                   alt="Twitter"></a>
