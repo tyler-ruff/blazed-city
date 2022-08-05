@@ -21,6 +21,7 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { PERSISTENCE } from '@angular/fire/compat/auth';
 import { ProfileComponent } from './profile/profile.component';
 import { UnknownComponent } from './unknown/unknown.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { UnknownComponent } from './unknown/unknown.component';
     LoginComponent,
     ExploreComponent,
     ProfileComponent,
-    UnknownComponent
+    UnknownComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

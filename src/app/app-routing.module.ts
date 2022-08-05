@@ -9,10 +9,12 @@ import { SignupComponent } from './signup/signup.component';
 import { UnknownComponent } from './unknown/unknown.component';
 
 import { AngularFireAuthGuard } from '@angular/fire/compat/auth-guard';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'search', component: SearchComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
   { path: 'explore', component: ExploreComponent },

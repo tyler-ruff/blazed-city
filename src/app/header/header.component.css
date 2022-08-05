@@ -1,3 +1,6 @@
+nav{
+    z-index: 9999;
+}
 .nav-mobile {
     display:none;
 }
