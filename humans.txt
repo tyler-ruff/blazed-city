@@ -1,0 +1,38 @@
+/* TEAM */
+
+                            
+Your title: Blazed Labs LLC    
+Site: https://blazedlabs.com/
+                            
+Twitter: @BlazedLabs
+Email: hello@blazed.space
+
+Ruff Management Inc.
+Site: https://ruff-manage.com/
+
+Twitter: @RuffManage
+Email: hello@ruff-manage.com
+
+Location: Ocean City, New Jersey
+
+					
+/* THANKS */
+
+							
+Name: Tyler Ruff
+Title: Project Management Lead
+Email: tyler.ruff@blazed.company
+Github: tyler-ruff
+
+Name: Matthew Ruff
+Title: Engineer
+Email: matt.ruff@blazed.company
+Github: matt-ruff
+                            
+/* SITE */
+URL:  https://blazed.city/
+REPO: https://github.com/tyler-ruff/blazed-city
+   
+Standards: HTML5, CSS3
+Components: InstantPage
+Software: VSCode
