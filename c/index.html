@@ -34,7 +34,7 @@
             const citiesList = snapshot.docs.map(doc => doc.data());
             if(citiesList.length === 1){
                 document.getElementById('city-title').innerHTML = citiesList[0].name;
-                document.getElementById('city-breadcrumb').innerHTML = city;
+                document.getElementById('city-breadcrumb').innerHTML = capitalize(city);
                 document.getElementById('city-map').src = `https://www.blazed.city/assets/svg/${city}.svg`;
                 document.getElementById('loading-spinner').classList.add('hidden');
                 document.getElementById('city-map').classList.remove('hidden');
