@@ -12,8 +12,8 @@ const siteConfig = {
         url: "https://blazed.world/"
     },
     {
-        text: "User Portal",
-        url: "https://blazed.monster/"
+        text: "About",
+        url: "https://blazed.world/index.html?p=about"
     },
     {
         text: "Cities",
@@ -24,8 +24,8 @@ const siteConfig = {
         url: "https://blazed.world/"
     },
     {
-        text: "User Portal",
-        url: "https://blazed.monster/"
+        text: "About",
+        url: "https://blazed.world/index.html?p=about"
     },
     {
         text: "Cities",
@@ -233,6 +233,7 @@ function build_header(config, page){
 
 function build_content(config, content){
     const main = f('main');
+    main.id = "main-content";
     const article = f('article');
     article.classList.add('bg-gray-50');
     article.innerHTML = content;
