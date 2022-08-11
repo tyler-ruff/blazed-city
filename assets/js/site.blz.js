@@ -70,7 +70,7 @@ function toggle_user_panel(event = null){
 function  build_user_bar(){
 	const userBar = f('div');
 	userBar.id = "user-panel";
-    userBar.classList.add('justify-between', 'flex', 'bg-gray-400', 'border-b', 'border-gray-800', 'py-5', 'pl-3', 'md:px-10');
+    userBar.classList.add('hidden', 'justify-between', 'flex', 'bg-gray-400', 'border-b', 'border-gray-800', 'py-5', 'pl-3', 'md:px-10');
     const authStatus = f('span');
     authStatus.classList.add('justify-start', 'inline-flex');
     authStatus.innerHTML = 'Not logged in.';
