@@ -37,6 +37,9 @@ function single(){
                 <div class="hidden md:flex">
                     <span>
                         <a href="https://www.blazed.city/" class="text-white hover:underline">Cities</a>
+                        <span>
+                            &nbsp; &gt; &nbsp;
+                        </span>
                         <span id="city-breadcrumb" class="underline"></span>
                     </span>
                 </div>
