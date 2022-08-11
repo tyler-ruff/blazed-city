@@ -1,10 +1,10 @@
 const siteConfig = {
     siteTitle: "Blazed City",
     website: 'www.blazed.city', 
-    icon: 'https://blazed.sirv.com/logo/Beaker-Cobalt.png', 
+    icon: 'https://blazed.sirv.com/logo/Beaker-White.png', 
     twitter: 'BlazedLabs',
     fbAppId: '503698127531557',
-    theme: '000000',
+    theme: '0040bf',
     company: 'Blazed Labs LLC',
     motto: 'We turn Dreams into Reality.',
     nav: [{
@@ -52,7 +52,7 @@ function hide_burger(event){
 
 function build_menu(config, page){
     const header = f('header');
-    header.classList.add('header', 'bg-gray-900');
+    header.classList.add('header', 'bg-gradient-to-t', 'from-blue-900', 'to-blue-800');
     header.id = "Top";
     const innerWrapper = f('div');
     innerWrapper.classList.add('max-w-screen-xl', 'px-4', 'mx-auto', 'sm:px-6', 'lg:px-8');
