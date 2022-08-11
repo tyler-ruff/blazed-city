@@ -307,3 +307,5 @@ function build_footer(config){
     //document.querySelector('.footer').innerHTML = blz_footer.innerHTML;
 }
 
+
+toggle_user_panel();
