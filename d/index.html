@@ -3,147 +3,91 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <link rel="dns-prefetch" href="//blazed.sirv.com/">
         <link rel="preconnect" href="https://blazed.sirv.com/">
-        <title>
-            Blazed City - View District
-        </title>
-        <!-- Favicon -->
-        <link rel="icon" sizes="192x192" href="https://blazed.sirv.com/logo/Beaker-Red.png?w=192&h=192">
-        <link rel="apple-touch-icon" href="https://blazed.sirv.com/logo/Beaker-Red.png?w=180&h=180">
-        <link rel="apple-touch-startup-image" href="https://blazed.sirv.com/logo/Beaker-Red.png?w=180&h=180">
-        <link rel="stylesheet" href="https://www.blazed.city/assets/css/fire.css">
+
+        <link rel="stylesheet" href="https://www.blazed.city/node_modules/blz-fire/lib/fire.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
-        <link rel="license" href="https://www.blazed.city/LICENSE.txt">
-        <link rel="manifest" href="https://www.blazed.city/manifest.json">
-        <link rel="author" href="https://www.blazed.city/humans.txt">
-        <!-- Meta -->
-        <meta name="msapplication-config" content="https://www.blazed.city/browserconfig.xml">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="theme-color" content="#000000">
-        <meta name="application-name" content="Blazed City">
-        <meta name="apple-mobile-web-app-title" content="Blazed City - View District">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <meta name="google" content="nositelinkssearchbox">
-        <meta name="robots" content="index,follow">
-        <meta name="googlebot" content="index,follow">
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:site" content="@BlazedLabs">
-        <meta name="twitter:url" content="https://www.blazed.city/">
-        <meta name="twitter:title" content="Blazed City - View District">
-        <meta name="twitter:description" content="We turn dreams into reality.">
-        <meta name="twitter:image" content="https://blazed.sirv.com/blazed.space/erol-ahmed-d3pTF3r_hwY-unsplash.jpg?w=500&h=500">
-        <meta name="twitter:image:alt" content="Photo by Erol Ahmed on Unsplash">
-        <meta property="fb:app_id" content="503698127531557">
-        <meta property="og:url" content="https://www.blazed.city/">
-        <meta property="og:type" content="website">
-        <meta property="og:title" content="Blazed City - View District">
-        <meta property="og:image" content="https://blazed.sirv.com/blazed.space/erol-ahmed-d3pTF3r_hwY-unsplash.jpg?w=500&h=500">
-        <meta property="og:image:alt" content="Photo by Erol Ahmed on Unsplash">
-        <meta property="og:description" content="We turn dreams into reality.">
-        <meta property="og:site_name" content="Blazed City - View District">
-        <meta property="og:locale" content="en_US">
-        <meta property="article:author" content="Blazed Labs LLC">
-        <meta itemprop="name" content="Blazed City - View District">
-        <meta itemprop="description" content="We turn dreams into reality.">
-        <meta itemprop="image" content="https://blazed.sirv.com/logo/Beaker-Dark.png?w=180&h=180">
+
+        <script src="https://www.blazed.city/node_modules/blz-fire/lib/fire.js"></script>
+        <script src="https://www.blazed.city/assets/js/site.blz.js"></script>
+
+        <script src="https://www.blazed.city/assets/js/views/district.blz.js"></script>
 
         <script type="module">
-          // Import the functions you need from the SDKs you need
           import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-app.js";
           import { getFirestore, collection, getDocs, query, limit, orderBy, where } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-firestore.js";
-          // TODO: Add SDKs for Firebase products that you want to use
-          // https://firebase.google.com/docs/web/setup#available-libraries
-        
-          // Your web app's Firebase configuration
-          const firebaseConfig = {
-            apiKey: "AIzaSyDk16j5v4q7-jzUaDVQFY_5i4Ssy9LCjbY",
-            authDomain: "blazed-city.firebaseapp.com",
-            projectId: "blazed-city",
-            storageBucket: "blazed-city.appspot.com",
-            messagingSenderId: "58777314507",
-            appId: "1:58777314507:web:c46d8ba32b81215beb274e"
-          };
-        
-          // Initialize Firebase
-            const app = initializeApp(firebaseConfig);
+          const app = initializeApp(firebaseConfig);
+          const db = getFirestore(app);
+          const params = new Proxy(new URLSearchParams(window.location.search), {
+            get: (searchParams, prop) => searchParams.get(prop),
+          });
+          let city = params.c;
+          let district = params.d; 
+          let page = 0;
 
-            const params = new Proxy(new URLSearchParams(window.location.search), {
-              get: (searchParams, prop) => searchParams.get(prop),
-            });
-            let city = params.c;
-            let district = params.d; 
-            //console.log(city);
-            //console.log(district);
-
-            let page = 0;
-
-            const db = getFirestore(app);
-
-            async function getDistrict(db, city, district){
-              const districtsCol = collection(db, 'districts');
-              const q = query(districtsCol, where('number', '==', district), where('city', '==', city), limit(1));
-              const snapshot = await getDocs(q);
-              const districtList = snapshot.docs.map(doc => doc.data());
-              //return districtList;
-              //console.log(districtList[0].nickname);
-              if(districtList.length === 1){
-                document.getElementById('district-nickname').innerHTML = districtList[0].nickname;
-                document.getElementById('district-city').innerHTML = districtList[0].city;
-                document.getElementById('city-breadcrumb').innerHTML = districtList[0].city;
-                document.getElementById('city-breadcrumb').href = `https://www.blazed.city/c/${districtList[0].city}.html`;
-                document.getElementById('district-breadcrumb').innerHTML = "District " + district;
-              } else {
-                window.location.replace("http://www.blazed.city/");
-              }
-            }
-
-            async function getPlaces(db, city, district){
-              const placesCol = collection(db, 'places');
-              const q = query(placesCol, where('district', '==', district), where('city', '==', city), limit(10));
-              const snapshot = await getDocs(q);
-              const placeList = snapshot.docs.map(doc => doc.data());
-              //console.log(placeList);
-              if(placeList.length === 0){
-                document.getElementById('district-places').innerHTML += `
-                <div class="inline-flex mx-3 p-1 mt-3 bg-gray-600 rounded-2xl group">
-                    <div class="block p-6 bg-gray-100 sm:p-8 rounded-xl" href="">
-                      <div class="mt-16 sm:pr-8">
-                        <h5 class="text-xl font-bold text-gray-600">
-                          No places have been established here yet...
-                        </h5>
-                      </div>
-                    </div>
-                  </div>
-                `;
-              }
-              for(let i = 0; i < placeList.length; i++){
-                document.getElementById('district-places').innerHTML += `
-                  <div class="inline-flex mx-3 p-1 mt-3 shadow-xl bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-2xl group">
-                    <a href="https://blazed.place/visit.html?c=${placeList[i].city}&d=${placeList[i].district}&u=${placeList[i].unit}" class="block p-6 bg-white group-hover:bg-transparent sm:p-8 rounded-xl" href="">
-                      <div class="mt-16 sm:pr-8">
-                        <h5 class="text-xl font-bold text-gray-900 group-hover:text-white">
-                          ${placeList[i].name}
-                        </h5>
-
-                        <p class="mt-2 text-sm text-gray-500 group-hover:text-white">
-                          ${placeList[i].zone}
-                        </p>
-                      </div>
-                    </a>
-                  </div>
-                `;
-              }
-              
-            }
-
-            if(city !== null && district !== null){
-              getDistrict(db, city, district);
-              getPlaces(db, city, district);
+          async function getDistrict(db, city, district){
+            const districtsCol = collection(db, 'districts');
+            const q = query(districtsCol, where('number', '==', district), where('city', '==', city), limit(1));
+            const snapshot = await getDocs(q);
+            const districtList = snapshot.docs.map(doc => doc.data());
+            if(districtList.length === 1){
+              document.getElementById('district-nickname').innerHTML = districtList[0].nickname;
+              document.getElementById('district-city').innerHTML = districtList[0].city;
+              document.getElementById('city-breadcrumb').innerHTML = districtList[0].city;
+              document.getElementById('city-breadcrumb').href = `https://www.blazed.city/c/${districtList[0].city}.html`;
+              document.getElementById('district-breadcrumb').innerHTML = "District " + district;
             } else {
               window.location.replace("http://www.blazed.city/");
             }
+          }
+
+          async function getPlaces(db, city, district){
+            const placesCol = collection(db, 'places');
+            const q = query(placesCol, where('district', '==', district), where('city', '==', city), limit(10));
+            const snapshot = await getDocs(q);
+            const placeList = snapshot.docs.map(doc => doc.data());
+            if(placeList.length === 0){
+              document.getElementById('district-places').innerHTML += `
+              <div class="inline-flex mx-3 p-1 mt-3 bg-gray-600 rounded-2xl group">
+                  <div class="block p-6 bg-gray-100 sm:p-8 rounded-xl" href="">
+                    <div class="mt-16 sm:pr-8">
+                      <h5 class="text-xl font-bold text-gray-600">
+                        No places have been established here yet...
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              `;
+            }
+
+            for(let i = 0; i < placeList.length; i++){
+              document.getElementById('district-places').innerHTML += `
+                <div class="inline-flex mx-3 p-1 mt-3 shadow-xl bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-2xl group">
+                  <a href="https://blazed.place/visit.html?c=${placeList[i].city}&d=${placeList[i].district}&u=${placeList[i].unit}" class="block p-6 bg-white group-hover:bg-transparent sm:p-8 rounded-xl" href="">
+                    <div class="mt-16 sm:pr-8">
+                      <h5 class="text-xl font-bold text-gray-900 group-hover:text-white">
+                        ${placeList[i].name}
+                      </h5>
+
+                      <p class="mt-2 text-sm text-gray-500 group-hover:text-white">
+                        ${placeList[i].zone}
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              `;
+            }
+            
+          }
+
+          if(city !== null && district !== null){
+            getDistrict(db, city, district);
+            getPlaces(db, city, district);
+          } else {
+            window.location.replace("http://www.blazed.city/");
+          }
 
         </script>
 
@@ -152,261 +96,17 @@
         <![endif]-->
     </head>
     <body>
-        <section class="md:hidden">
-            <div id="off-canvas-menu" class="hidden fixed inset-y-0 right-0 z-50 flex">
-                <div class="w-screen">
-                <div class="flex flex-col h-full divide-y divide-gray-200 bg-gray-50">
-                    <div>
-                    <header class="flex items-center justify-between h-16 pl-6">
-                        <span class="text-sm font-medium tracking-widest uppercase">
-                        Menu
-                        </span>
-            
-                        <button
-                        aria-label="Close menu"
-                        class="w-16 h-16 border-l border-gray-200"
-                        type="button"
-                        onmouseup="toggleBurger();"
-                        >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="w-5 h-5 mx-auto"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                        >
-                            <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M6 18L18 6M6 6l12 12"
-                            />
-                        </svg>
-                        </button>
-                    </header>
-            
-                    <nav
-                        class="flex flex-col text-sm font-medium text-gray-500 border-t border-b border-gray-200 divide-y divide-gray-200"
-                    >
-                        <a href="https://www.blazed.city/" class="px-6 py-3">
-                            Home
-                        </a>
-                        <a href="https://blazed.monster/" class="px-6 py-3">
-                            User Portal
-                        </a>
-                        <a href="https://www.blazed.city/" class="px-6 py-3">
-                            Cities
-                        </a>
-                    </nav>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </section>
-        <header id="Top" class="bg-gray-900">
-            <div class="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
-              <div class="flex items-center justify-between h-16">
-                <div class="flex-1 md:flex md:items-center md:gap-12">
-                  <a class="block text-teal-300 hover:opacity-75" title="Blazed City" href="https://www.blazed.city/">
-                    <span class="sr-only">Home</span>
-                    <img src="https://blazed.sirv.com/logo/Beaker-Gray.png?w=50&h=50" />
-                  </a>
-                </div>
-          
-                <div class="md:flex md:items-center md:gap-12">
-                  <nav class="hidden md:block" aria-labelledby="header-navigation">
-                    <h2 class="sr-only" id="header-navigation">Header navigation</h2>
-          
-                    <ul class="flex items-center gap-6 text-sm">
-                      <li>
-                        <a class="text-white transition hover:text-white/75 hover:underline" href="https://blazed.world/">
-                          Home
-                        </a>
-                      </li>
-          
-                      <li>
-                        <a class="text-white transition hover:text-white/75 hover:underline" href="https://blazed.monster/">
-                          User Portal
-                        </a>
-                      </li>
-          
-                      <li>
-                        <a class="text-white transition hover:text-white/75 hover:underline" href="https://www.blazed.city/">
-                          Cities
-                        </a>
-                      </li>
-
-                    </ul>
-                  </nav>
-          
-                    <div class="block md:hidden">
-                      <button
-                        onmouseup="toggleBurger();"
-                        class="p-2 text-white transition bg-gray-800 rounded hover:text-white/75"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          class="w-5 h-5"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          stroke-width="2"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M4 6h16M4 12h16M4 18h16"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </header>
-        <main class="bg-gray-50 px-10 mb-10">
-          <div class="flex items-center py-4 mt-1 overflow-y-auto whitespace-nowrap">
-            <a href="https://www.blazed.city/" class="text-gray-600 dark:text-gray-200">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-                </svg>
-            </a>
-    
-            <span class="mx-5 text-gray-500 dark:text-gray-300">
-                /
-            </span>
-    
-            <a href="" id="city-breadcrumb" class="text-gray-600 dark:text-gray-200 hover:underline">
-                
-            </a>
-    
-            <span class="mx-5 text-gray-500 dark:text-gray-300">
-                /
-            </span>
-    
-            <span id="district-breadcrumb" class="text-gray-600 dark:text-gray-200">
-                Profile
-            </span>
-  
-        </div>
-        <hr />
-         <h1 class="text-center text-3xl py-10 font-bold" id="page-title">
-          View District
-         </h1>
-         <hr />
-         <h2 id="district-nickname" class="text-center text-2xl py-5"></h2>
-         <h3 class="text-xl py-5 pb-10 text-center">
-          City: <span id="district-city"></span>
-         </h3>
-         <hr />
-         <div class=" girid grid-col-1 md:grid-col-2 lg:grid-col-3 mt-5 py-10" id="district-places"></div>
-         <!--
-          Pagination,
-          TODO: build pagination based on total pages of buildings
-         <div class="flex mb-10">
-            <a href="#" class="flex items-center px-4 py-2 mx-1 text-gray-500 bg-white rounded-md cursor-not-allowed dark:bg-gray-900 dark:text-gray-600">
-                previous
-            </a>
-    
-            <a href="#" class="items-center hidden px-4 py-2 mx-1 text-gray-700 transition-colors duration-200 transform bg-white rounded-md sm:flex dark:bg-gray-900 dark:text-gray-200 hover:bg-blue-600 dark:hover:bg-blue-500 hover:text-white dark:hover:text-gray-200">
-                1
-            </a>
-    
-            <a href="#" class="items-center hidden px-4 py-2 mx-1 text-gray-700 transition-colors duration-200 transform bg-white rounded-md sm:flex dark:bg-gray-900 dark:text-gray-200 hover:bg-blue-600 dark:hover:bg-blue-500 hover:text-white dark:hover:text-gray-200">
-                2
-            </a>
-    
-            <a href="#" class="items-center hidden px-4 py-2 mx-1 text-gray-700 transition-colors duration-200 transform bg-white rounded-md sm:flex dark:bg-gray-900 dark:text-gray-200 hover:bg-blue-600 dark:hover:bg-blue-500 hover:text-white dark:hover:text-gray-200">
-                3
-            </a>
-    
-            <a href="#" class="flex items-center px-4 py-2 mx-1 text-gray-700 transition-colors duration-200 transform bg-white rounded-md dark:bg-gray-900 dark:text-gray-200 hover:bg-blue-600 dark:hover:bg-blue-500 hover:text-white dark:hover:text-gray-200">
-                Next
-            </a>
-        </div>
-        -->
-    </main>
-
-        <footer class="bg-gray-900">
-            <div
-              class="relative max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8 lg:pt-24"
-            >
-              <div class="absolute top-4 sm:top-6 lg:top-8 right-4 sm:right-6 lg:right-8">
-                <a
-                  class="inline-block p-2 text-teal-300 transition bg-gray-700 rounded-full sm:p-3 lg:p-4 hover:bg-gray-600"
-                  href="#Top"
-                >
-                  <span class="sr-only">Back to top</span>
-          
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="w-5 h-5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                </a>
-              </div>
-          
-              <div class="lg:flex lg:items-end lg:justify-between">
-                <div>
-                  <div class="flex justify-center text-teal-300 lg:justify-start">
-                    <img src="https://blazed.sirv.com/logo/Beaker-Gray.png?w=50&h=50" />
-                  </div>
-          
-                  <p
-                    class="max-w-md mx-auto mt-6 leading-relaxed text-center text-gray-400 lg:text-left"
-                  >
-                    Blazed City
-                  </p>
-                </div>
-          
-                <nav class="mt-12 lg:mt-0" aria-labelledby="footer-navigation">
-                  <h2 class="sr-only" id="footer-navigation">Footer navigation</h2>
-          
-                  <ul
-                    class="flex flex-wrap justify-center gap-6 lg:justify-end md:gap-8 lg:gap-12"
-                  >
-                    <li>
-                      <a href="https://www.blazed.city/" class="text-white transition hover:text-white/75">
-                        Home
-                      </a>
-                    </li>
-          
-                    <li>
-                      <a href="https://blazed.monster/" class="text-white transition hover:text-white/75">
-                        User Portal
-                      </a>
-                    </li>
-          
-                    <li>
-                      <a href="https://www.blazed.city/" class="text-white transition hover:text-white/75">
-                        Cities
-                      </a>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-          
-              <p class="mt-12 text-sm text-center text-gray-400 lg:text-right">
-                Copyright &copy; 2022 <a href="https://blazedlabs.com/" class="hover:underline">Blazed Labs LLC.</a>, <a href="https://ruff-manage.com/" class="hover:underline">Ruff Management Inc.</a> All rights reserved.
-              </p>
-            </div>
-          </footer>
-          <script>
-            function toggleBurger(){
-                if(document.getElementById('off-canvas-menu').classList.contains('hidden')){
-                    document.getElementById('off-canvas-menu').classList.remove('hidden');
-                } else {
-                    document.getElementById('off-canvas-menu').classList.add('hidden');
-                }
-            }
-          </script>
+      <script>
+        let blz_page = getPage();
+        const config = build_config(siteConfig, 
+        'View single city.', 
+        blz_page);
+        let pageData = build_routes(blz_page);
+        const blz_app = new Fire(config);
+        create_app(blz_app.config, pageData);
+      </script>
+      <noscript>
+        For the best browsing experience, please enable Javascript.
+      </noscript>
     </body>
 </html>
