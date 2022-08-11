@@ -34,9 +34,9 @@
             const districtList = snapshot.docs.map(doc => doc.data());
             if(districtList.length === 1){
               document.getElementById('district-nickname').innerHTML = districtList[0].nickname;
-              document.getElementById('district-city').innerHTML = districtList[0].city;
-              document.getElementById('city-breadcrumb').innerHTML = districtList[0].city;
-              document.getElementById('city-breadcrumb').href = `https://www.blazed.city/c/${districtList[0].city}.html`;
+              document.getElementById('district-city').innerHTML = capitalize(districtList[0].city);
+              document.getElementById('city-breadcrumb').innerHTML = capitalize(districtList[0].city);
+              document.getElementById('city-breadcrumb').href = `https://www.blazed.city/c/index.html?c=${districtList[0].city}`;
               document.getElementById('district-breadcrumb').innerHTML = "District " + district;
             } else {
               window.location.replace("http://www.blazed.city/");
