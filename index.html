@@ -48,6 +48,61 @@
         <meta itemprop="name" content="Blazed City">
         <meta itemprop="description" content="We turn dreams into reality.">
         <meta itemprop="image" content="https://blazed.sirv.com/logo/Beaker-Dark.png?w=180&h=180">
+
+        <script type="module">
+          // Import the functions you need from the SDKs you need
+          import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-app.js";
+          import { getFirestore, collection, getDocs, query, limit, orderBy, where } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-firestore.js";
+          // TODO: Add SDKs for Firebase products that you want to use
+          // https://firebase.google.com/docs/web/setup#available-libraries
+        
+          // Your web app's Firebase configuration
+          const firebaseConfig = {
+            apiKey: "AIzaSyDk16j5v4q7-jzUaDVQFY_5i4Ssy9LCjbY",
+            authDomain: "blazed-city.firebaseapp.com",
+            projectId: "blazed-city",
+            storageBucket: "blazed-city.appspot.com",
+            messagingSenderId: "58777314507",
+            appId: "1:58777314507:web:c46d8ba32b81215beb274e"
+          };
+
+            const app = initializeApp(firebaseConfig);
+            const db = getFirestore(app);
+
+            /*
+            const params = new Proxy(new URLSearchParams(window.location.search), {
+              get: (searchParams, prop) => searchParams.get(prop),
+            });
+            */
+
+            async function getCities(db){
+              const citiesCol = collection(db, 'cities');
+              const snapshot = await getDocs(citiesCol);
+              const citiesList = snapshot.docs.map(doc => doc.data());
+              document.getElementById('loading-spinner').classList.add('hidden');
+              for(let i = 0; i < citiesList.length; i++){
+                  document.getElementById('city-list').innerHTML += `
+                    <a href="https://www.blazed.city/c/index.html?c=${citiesList[i].slug}">
+                        <div class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8 group">
+                              <div class="space-y-4">
+                                  <h3 class="text-2xl font-semibold text-purple-900 group-hover:underline">
+                                    ${citiesList[i].name}
+                                  </h3>
+                                  <p class="mb-6">
+                                    ${citiesList[i].desc}
+                                  </p>
+                                  <span class="block font-medium text-purple-600 group-hover:text-purple-700">
+                                    Visit  
+                                  </span>
+                              </div>
+                        </div>
+                      </a>
+                  `;
+              }
+            }
+
+            getCities(db);
+        </script>
         
         <!--[if lt IE 9]>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -167,117 +222,14 @@
               </div>
             </div>
           </header>
-        <main class="bg-gray-50 px-10">
-         <h1 class="text-center text-3xl py-10">
-          Explore Cities
-         </h1>
-          <div class="py-16">  
-            <div class="container m-auto px-6 text-gray-500 md:px-12 xl:px-0">
-                <div class="mx-auto grid gap-6 md:w-3/4 lg:w-full lg:grid-cols-3">
-                    <a href="https://www.blazed.city/c/blazed.html">
-                      <div class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8 group">
-                            <div class="space-y-4">
-                                <h3 class="text-2xl font-semibold text-purple-900 group-hover:underline">
-                                  Greater City of Blazed
-                                </h3>
-                                <p class="mb-6">
-                                  Contains much of the office/administrative firms in the Blazed Nation, as well as the Blazed National Government.
-                                </p>
-                                <span class="block font-medium text-purple-600 group-hover:text-purple-700">Know more</span>
-                            </div>
-                      </div>
-                    </a>
-                    <a href="https://www.blazed.city/c/swell.html">
-                      <div class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8 group">
-                          <div class="space-y-4">
-                              <h3 class="text-2xl font-semibold text-purple-900 group-hover:underline">
-                                Swell City
-                              </h3>
-                              <p class="mb-6">
-                                Has much of the retail, shopping, and commerce of the Blazed Nation. Also has the performing arts sector.
-                              </p>
-                              <span class="block font-medium text-purple-600 group-hover:text-purple-700">Know more</span>
-                          </div>
-                    </div>
-                  </a>
-                  <a href="https://www.blazed.city/c/magnolia.html">
-                    <div class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8 group">
-                        <div class="space-y-4">
-                            <h3 class="text-2xl font-semibold text-purple-900 group-hover:underline">
-                              Magnolia City
-                            </h3>
-                            <p class="mb-6">
-                              Contains much of the industrial businesses of the Blazed Nation. Also has Magnolia Intl. airport. and many warehouses.
-                            </p>
-                            <span class="block font-medium text-purple-600 group-hover:text-purple-700">Know more</span>
-                        </div>
-                  </div>
-                </a>
-                <a href="https://www.blazed.city/c/ferringwood.html">
-                  <div class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8 group">
-                      <div class="space-y-4">
-                          <h3 class="text-2xl font-semibold text-purple-900 group-hover:underline">
-                            Ferringwood Village
-                          </h3>
-                          <p class="mb-6">
-                            Is mostly residential. Upscale and high income housing.
-                          </p>
-                          <span class="block font-medium text-purple-600 group-hover:text-purple-700">Know more</span>
-                      </div>
-                </div>
-              </a>
-              <a href="https://www.blazed.city/c/hermopolis.html">
-                <div class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8 group">
-                    <div class="space-y-4">
-                        <h3 class="text-2xl font-semibold text-purple-900 group-hover:underline">
-                          Hermopolis Town
-                        </h3>
-                        <p class="mb-6">
-                          Contains "the great wheel of Hermes". Also has Blazed University and a great Library.
-                        </p>
-                        <span class="block font-medium text-purple-600 group-hover:text-purple-700">Know more</span>
-                    </div>
-              </div>
-            </a>
-            <a href="https://www.blazed.city/c/memphis.html">
-              <div class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8 group">
-                  <div class="space-y-4">
-                      <h3 class="text-2xl font-semibold text-purple-900 group-hover:underline">
-                        Memphis City
-                      </h3>
-                      <p class="mb-6">
-                        Great big city, rival to GCOB. Mostly services the tourism industry.
-                      </p>
-                      <span class="block font-medium text-purple-600 group-hover:text-purple-700">Know more</span>
-                  </div>
-            </div>
-          </a>
-          <a href="https://www.blazed.city/c/chelsea.html">
-            <div class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8 group">
-                <div class="space-y-4">
-                    <h3 class="text-2xl font-semibold text-purple-900 group-hover:underline">
-                      Chelsea Seaport
-                    </h3>
-                    <p class="mb-6">
-                      Contains the biggest seaport in the Blazed Nation. Also has lots of industry.
-                    </p>
-                    <span class="block font-medium text-purple-600 group-hover:text-purple-700">Know more</span>
-                </div>
-            </div>
-          </a>
-          <a href="https://www.blazed.city/c/mosno.html">
-            <div class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8 group">
-                <div class="space-y-4">
-                    <h3 class="text-2xl font-semibold text-purple-900 group-hover:underline">
-                      Mosno City
-                    </h3>
-                    <p class="mb-6">
-                      The largest city. Has lots of industry and business.
-                    </p>
-                    <span class="block font-medium text-purple-600 group-hover:text-purple-700">Know more</span>
-                </div>
-            </div>
-          </a>
+    <main class="bg-gray-50 md:px-10">
+      <h1 class="text-center text-3xl py-10 pt-20 font-bold">
+        Explore Cities
+      </h1>
+      <div id="loading-spinner" class="relative mx-auto mb-10 w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400"></div>
+      <div class="py-16">  
+        <div class="container m-auto px-6 text-gray-500 xl:px-0">
+          <div id="city-list" class="mx-auto grid gap-6 w-full lg:grid-cols-3"></div>
         </div>
       </div>
     </main>

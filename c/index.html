@@ -6,13 +6,13 @@
         <link rel="dns-prefetch" href="//blazed.sirv.com/">
         <link rel="preconnect" href="https://blazed.sirv.com/">
         <title>
-            Magnolia City
+            View City
         </title>
         <!-- Favicon -->
         <link rel="icon" sizes="192x192" href="https://blazed.sirv.com/logo/Beaker-Red.png?w=192&h=192">
         <link rel="apple-touch-icon" href="https://blazed.sirv.com/logo/Beaker-Red.png?w=180&h=180">
         <link rel="apple-touch-startup-image" href="https://blazed.sirv.com/logo/Beaker-Red.png?w=180&h=180">
-        <link rel="stylesheet" href="assets/css/fire.css">
+        <link rel="stylesheet" href="https://blazed.city/assets/css/fire.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
         <link rel="license" href="https://www.blazed.city/LICENSE.txt">
         <link rel="manifest" href="https://www.blazed.city/manifest.json">
@@ -21,8 +21,8 @@
         <meta name="msapplication-config" content="https://www.blazed.city/browserconfig.xml">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="theme-color" content="#000000">
-        <meta name="application-name" content="Magnolia City">
-        <meta name="apple-mobile-web-app-title" content="Magnolia City">
+        <meta name="application-name" content="View City">
+        <meta name="apple-mobile-web-app-title" content="View City">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <meta name="google" content="nositelinkssearchbox">
@@ -30,24 +30,96 @@
         <meta name="googlebot" content="index,follow">
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@BlazedLabs">
-        <meta name="twitter:url" content="https://www.blazed.city/c/magnolia.html">
-        <meta name="twitter:title" content="Magnolia City">
+        <meta name="twitter:url" content="https://www.blazed.city/c/index.html">
+        <meta name="twitter:title" content="View City">
         <meta name="twitter:description" content="We turn dreams into reality.">
         <meta name="twitter:image" content="https://blazed.sirv.com/blazed.space/erol-ahmed-d3pTF3r_hwY-unsplash.jpg?w=500&h=500">
         <meta name="twitter:image:alt" content="Photo by Erol Ahmed on Unsplash">
         <meta property="fb:app_id" content="503698127531557">
-        <meta property="og:url" content="https://www.blazed.city/c/magnolia.html">
+        <meta property="og:url" content="https://www.blazed.city/c/index.html">
         <meta property="og:type" content="website">
-        <meta property="og:title" content="Magnolia City">
+        <meta property="og:title" content="View City">
         <meta property="og:image" content="https://blazed.sirv.com/blazed.space/erol-ahmed-d3pTF3r_hwY-unsplash.jpg?w=500&h=500">
         <meta property="og:image:alt" content="Photo by Erol Ahmed on Unsplash">
         <meta property="og:description" content="We turn dreams into reality.">
-        <meta property="og:site_name" content="Magnolia City">
+        <meta property="og:site_name" content="View City">
         <meta property="og:locale" content="en_US">
         <meta property="article:author" content="Blazed Labs LLC">
-        <meta itemprop="name" content="Magnolia City">
+        <meta itemprop="name" content="View City">
         <meta itemprop="description" content="We turn dreams into reality.">
         <meta itemprop="image" content="https://blazed.sirv.com/logo/Beaker-Dark.png?w=180&h=180">
+
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-app.js";
+            import { getFirestore, collection, getDocs, query, limit, orderBy, where } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-firestore.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+          
+            // Your web app's Firebase configuration
+            const firebaseConfig = {
+              apiKey: "AIzaSyDk16j5v4q7-jzUaDVQFY_5i4Ssy9LCjbY",
+              authDomain: "blazed-city.firebaseapp.com",
+              projectId: "blazed-city",
+              storageBucket: "blazed-city.appspot.com",
+              messagingSenderId: "58777314507",
+              appId: "1:58777314507:web:c46d8ba32b81215beb274e"
+            };
+
+              const app = initializeApp(firebaseConfig);
+              const db = getFirestore(app);
+  
+              const params = new Proxy(new URLSearchParams(window.location.search), {
+                get: (searchParams, prop) => searchParams.get(prop),
+              });
+              let city = params.c;
+
+              async function getCity(db, city){
+                const citiesCol = collection(db, 'cities');
+                const q = query(citiesCol, where('slug', '==', city), limit(1));
+                const snapshot = await getDocs(q);
+                const citiesList = snapshot.docs.map(doc => doc.data());
+                if(citiesList.length === 1){
+                    document.getElementById('city-title').innerHTML = citiesList[0].name;
+                    document.getElementById('city-breadcrumb').innerHTML = city;
+                    document.getElementById('city-map').src = `https://www.blazed.city/assets/svg/${city}.svg`;
+                    document.getElementById('loading-spinner').classList.add('hidden');
+                    document.getElementById('city-map').classList.remove('hidden');
+                    document.getElementById('city-titlebar').classList.remove('bg-purple-800');
+                    document.getElementById('city-titlebar').classList.add(`bg-${citiesList[0].color}-800`);
+                    document.getElementById('city-titlebar-menu').classList.remove('bg-purple-800');
+                    document.getElementById('city-titlebar-menu').classList.add(`bg-${citiesList[0].color}-800`);
+                } else {
+                    // city not found
+                    window.location.replace("http://www.blazed.city/");
+                }
+              }
+
+              async function getDistricts(db, city){
+                const districtsCol = collection(db, 'districts');
+                const q = query(districtsCol, where('city', '==', city));
+                const snapshot = await getDocs(q);
+                const districtList = snapshot.docs.map(doc => doc.data());
+                for(let i = 0; i < districtList.length; i++){
+                    document.getElementById('city-districts').innerHTML += `
+                        <li>
+                            <a href="https://www.blazed.city/d/index.html?c=${city}&d=${districtList[i].number}" 
+                            class="block hover:underline text-white py-5 text-xl">
+                                ${districtList[i].nickname}
+                            </a>
+                        </li>
+                    `;
+                }
+              }
+
+              if(city !== null){
+                getCity(db, city);
+                getDistricts(db, city);
+              } else {
+                // if ?c= query string is empty
+                window.location.replace("http://www.blazed.city/");
+              }
+        </script>
 
         <!--[if lt IE 9]>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -168,31 +240,27 @@
             </div>
           </header>
         <main>
-            <h1 class="text-4xl my-10 text-center">
-                Magnolia City
-              </h1>
+              <h1 id="city-title" class="text-4xl my-10 text-center font-bold"></h1>
               <script>
                 function expandMenu(){
-                  document.getElementById('district-menu').classList.remove('hidden');
+                  document.getElementById('city-titlebar-menu').classList.remove('hidden');
                   document.getElementById('view-dstricts').classList.add('hidden');
                   document.getElementById('close-dstricts').classList.remove('hidden');
                 }
 
                 function closeMenu(){
-                  document.getElementById('district-menu').classList.add('hidden');
+                  document.getElementById('city-titlebar-menu').classList.add('hidden');
                   document.getElementById('view-dstricts').classList.remove('hidden');
                   document.getElementById('close-dstricts').classList.add('hidden');
                 }
               </script>
-              <div class="px-8 py-2 bg-red-800 text-white dark:bg-gray-900 dark:text-gray-100 mb-5">
+              <div id="city-titlebar" class="px-8 py-2 bg-purple-800 text-white dark:bg-gray-900 dark:text-gray-100 mb-5">
                 <div class="flex items-center mx-auto container justify-center md:justify-between py-2">
                   <div class="hidden md:flex">
                     <span>
                       <a href="https://www.blazed.city/" class="text-white hover:underline">Cities</a>
                       >
-                      <span class="underline">
-                        Magnolia
-                      </span>
+                      <span id="city-breadcrumb" class="underline"></span>
                     </span>
                   </div>
                   <a onmousedown="expandMenu();" rel="noopener noreferrer" class="items-center flex gap-2 cursor-pointer" id="view-dstricts">
@@ -209,29 +277,15 @@
                   </a>
                 </div>
               </div>
-              <div style="z-index:9999; margin-top:-20px; height:980px;" class="hidden absolute bg-red-800 w-full py-10 text-center" id="district-menu">
+              <div id="city-titlebar-menu" style="z-index:9999; margin-top:-20px; height:980px;" class="hidden absolute bg-purple-800 w-full py-10 text-center">
                 <h3 class="text-center text-3xl py-5 font-bold text-white mt-20">
                   Districts
                 </h3>
-                <ul class="mb-20">
-                  <li>
-                    <a href="https://www.blazed.city/d/index.html?c=magnolia&d=1" class="block hover:underline text-white py-5 text-xl">
-                      North Magnolia
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.blazed.city/d/index.html?c=magnolia&d=2" class="block hover:underline text-white py-5 text-xl">
-                      South Magnolia
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.blazed.city/d/index.html?c=magnolia&d=3" class="block hover:underline text-white py-5 text-xl">
-                      Bermuda Triangle
-                    </a>
-                  </li>
-                </ul>
+                <ul id="city-districts" class="mb-20"></ul>
               </div>
-              <img class="relative mx-auto" height="900" width="900" src="https://www.blazed.city/assets/svg/magnolia.svg" />
+              <div id="loading-spinner" class="relative mx-auto mb-10 w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400"></div>
+              <img id="city-map" class="hidden relative mx-auto" height="900" width="900"/>
+             </div>
         </main>
 
         <footer class="bg-gray-900">

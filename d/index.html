@@ -88,12 +88,14 @@
               const districtList = snapshot.docs.map(doc => doc.data());
               //return districtList;
               //console.log(districtList[0].nickname);
-              if(districtList[0].nickname !== null){
+              if(districtList.length === 1){
                 document.getElementById('district-nickname').innerHTML = districtList[0].nickname;
                 document.getElementById('district-city').innerHTML = districtList[0].city;
                 document.getElementById('city-breadcrumb').innerHTML = districtList[0].city;
                 document.getElementById('city-breadcrumb').href = `https://www.blazed.city/c/${districtList[0].city}.html`;
                 document.getElementById('district-breadcrumb').innerHTML = "District " + district;
+              } else {
+                window.location.replace("http://www.blazed.city/");
               }
             }
 
@@ -139,6 +141,8 @@
             if(city !== null && district !== null){
               getDistrict(db, city, district);
               getPlaces(db, city, district);
+            } else {
+              window.location.replace("http://www.blazed.city/");
             }
 
         </script>
@@ -287,7 +291,7 @@
   
         </div>
         <hr />
-         <h1 class="text-center text-3xl py-10">
+         <h1 class="text-center text-3xl py-10 font-bold" id="page-title">
           View District
          </h1>
          <hr />
