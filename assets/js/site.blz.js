@@ -69,6 +69,7 @@ function toggle_user_panel(event = null){
 
 function openLoginModal(event){
     document.getElementById('login-modal').classList.remove('hidden');
+    document.getElementById('login-bg').addEventListener('mouseup', closeLoginModal);
 }
 
 function closeLoginModal(event = null){
@@ -85,10 +86,10 @@ function  build_user_bar(){
     const authWrapper = f('div');
     authWrapper.classList.add('justify-end', 'inline-flex');
     const login = f('a');
-    login.href = "/login";
+    ///login.href = "/login";
     login.innerHTML = "Login";
     login.addEventListener('mouseup', openLoginModal);
-    login.classList.add('px-3', 'hover:underline');
+    login.classList.add('px-3', 'cursor-pointer', 'hover:underline');
     const register = f('a');
     register.href = "/register";
     register.innerHTML = "Register";
@@ -239,8 +240,8 @@ function build_header(config, page){
     blz_header.appendChild(menu);
     document.body.innerHTML += `
             <!-- Login Modal -->
-            <div id="login-modal" class="hidden fixed pin flex items-center">
-                <div class="fixed pin bg-black opacity-75 z-10"></div>
+            <div id="login-modal" class="hidden absolute w-full flex items-center">
+                <div id="login-bg" class="absolute w-full h-screen bg-black opacity-75 z-10"></div>
 
                 <div class="relative mx-6 md:mx-auto w-full md:w-1/2 lg:w-1/3 z-20 m-8">
                     <div class="shadow-lg bg-white rounded-lg p-8">
@@ -270,7 +271,7 @@ function build_header(config, page){
                             </div>
                             <div class="block md:flex items-center justify-between">
                                 <div>
-                                    <button class="bg-green hover:bg-green-dark text-white font-bold py-2 px-4 rounded border-b-4 border-green-darkest" type="button">
+                                    <button class="bg-blue-800 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded border-b-4 border-green-darkest" type="button">
                                         Sign In
                                     </button>
                                 </div>
