@@ -88,7 +88,7 @@ function  build_user_bar(){
     const authWrapper = f('div');
     authWrapper.classList.add('justify-end', 'inline-flex');
     const login = f('a');
-    ///login.href = "/login";
+    login.href = "#Top";
     login.innerHTML = "Login";
     login.addEventListener('mouseup', openLoginModal);
     login.classList.add('px-3', 'cursor-pointer', 'hover:underline');
