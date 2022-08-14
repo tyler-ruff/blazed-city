@@ -68,11 +68,13 @@ function toggle_user_panel(event = null){
 }
 
 function openLoginModal(event){
+    document.body.classList.add('overflow-hidden');
     document.getElementById('login-modal').classList.remove('hidden');
     document.getElementById('login-bg').addEventListener('mouseup', closeLoginModal);
 }
 
 function closeLoginModal(event = null){
+    document.body.classList.remove('overflow-hidden');
     document.getElementById('login-modal').classList.add('hidden');
 }
 
@@ -91,7 +93,7 @@ function  build_user_bar(){
     login.addEventListener('mouseup', openLoginModal);
     login.classList.add('px-3', 'cursor-pointer', 'hover:underline');
     const register = f('a');
-    register.href = "/register";
+    register.href = "https://blazed.world/register.html";
     register.innerHTML = "Register";
     register.classList.add('px-3', 'hover:underline');
     authWrapper.appendChild(login);
@@ -240,7 +242,7 @@ function build_header(config, page){
     blz_header.appendChild(menu);
     document.body.innerHTML += `
             <!-- Login Modal -->
-            <div id="login-modal" class="hidden absolute w-full flex items-center">
+            <div id="login-modal" class="hidden absolute w-full items-center">
                 <div id="login-bg" class="absolute w-full h-screen bg-black opacity-75 z-10"></div>
 
                 <div class="relative mx-6 md:mx-auto w-full md:w-1/2 lg:w-1/3 z-20 m-8">

@@ -21,8 +21,9 @@
         import { getAuth } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-auth.js";
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
+        const auth = getAuth(app);
 
-        async function doAuth(db){
+        async function doAuth(auth){
 
         }
 
@@ -60,7 +61,7 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
         <![endif]-->
     </head>
-    <body>
+    <body class="">
       <script>
         let page = getPage();
         const config = build_config(siteConfig, 
