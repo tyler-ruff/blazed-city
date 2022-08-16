@@ -46,7 +46,7 @@
               signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
-                window.location.replace("http://www.blazed.world/index.html");
+                window.location.replace("http://www.blazed.city/index.html");
                 // ...
               })
               .catch((error) => {
@@ -77,7 +77,7 @@
               }).catch((error) => {
                 // An error happened.
               });
-              window.location.replace("http://www.blazed.world/");
+              window.location.replace("http://www.blazed.city/");
           }
           document.getElementById('login-button').addEventListener('mouseup', login);
 
