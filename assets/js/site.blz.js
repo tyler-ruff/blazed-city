@@ -84,6 +84,7 @@ function  build_user_bar(){
     userBar.classList.add('hidden', 'justify-between', 'flex', 'bg-gray-400', 'border-b', 'border-gray-800', 'py-5', 'pl-3', 'md:px-10');
     const authStatus = f('span');
     authStatus.classList.add('justify-start', 'inline-flex');
+    authStatus.id = "auth-status";
     authStatus.innerHTML = 'Not logged in.';
     const authWrapper = f('div');
     authWrapper.classList.add('justify-end', 'inline-flex');
