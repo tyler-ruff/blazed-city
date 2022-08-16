@@ -50,61 +50,6 @@ function hide_burger(event){
     document.getElementById('header-mobile').classList.add('hidden');
 }
 
-function hide_user_panel(event = null){
-	document.getElementById('user-panel').classList.add('hidden');
-	document.getElementById('toggle-user-bar').innerHTML = "My Blazed";
-	document.getElementById('user-bar-icon').innerHTML = `<svg fill="#ffffff" class="inline-flex w-4 h-4" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512.02 319.26"><path d="M5.9 48.96 48.97 5.89c7.86-7.86 20.73-7.84 28.56 0l178.48 178.48L434.5 5.89c7.86-7.86 20.74-7.82 28.56 0l43.07 43.07c7.83 7.84 7.83 20.72 0 28.56l-192.41 192.4-.36.37-43.07 43.07c-7.83 7.82-20.7 7.86-28.56 0l-43.07-43.07-.36-.37L5.9 77.52c-7.87-7.86-7.87-20.7 0-28.56z"/></svg>`;
-}
-
-function toggle_user_panel(event = null){
-	if(document.getElementById('user-panel').classList.contains('hidden')){
-		document.getElementById('user-panel').classList.remove('hidden');
-		document.getElementById('toggle-user-bar').innerHTML = "Close";
-		document.getElementById('user-bar-icon').innerHTML = `<svg fill="#ffffff" class="inline-flex w-4 h-4" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 312.36"><path fill-rule="nonzero" d="M0 276.77 253.12 0 512 282.48l-32.65 29.88-226.2-246.83L32.66 306.64z"/></svg>`;
-		document.getElementById('main-content').addEventListener('mouseup', hide_user_panel);
-	} else {
-		hide_user_panel();
-	}
-}
-
-function openLoginModal(event){
-    document.body.classList.add('overflow-hidden');
-    document.getElementById('login-form').classList.remove('hidden');
-    document.getElementById('login-bg').addEventListener('mouseup', closeLoginModal);
-}
-
-function closeLoginModal(event = null){
-    document.body.classList.remove('overflow-hidden');
-    document.getElementById('login-form').classList.add('hidden');
-}
-
-function  build_user_bar(){
-	const userBar = f('div');
-	userBar.id = "user-panel";
-    userBar.classList.add('hidden', 'justify-between', 'flex', 'bg-gray-400', 'border-b', 'border-gray-800', 'py-5', 'pl-3', 'md:px-10');
-    const authStatus = f('span');
-    authStatus.classList.add('justify-start', 'inline-flex');
-    authStatus.id = "auth-status";
-    authStatus.innerHTML = 'Not logged in.';
-    const authWrapper = f('div');
-    authWrapper.classList.add('justify-end', 'inline-flex');
-    authWrapper.id = "auth-wrapper";
-    const login = f('a');
-    login.href = "#Top";
-    login.innerHTML = "Login";
-    login.addEventListener('mouseup', openLoginModal);
-    login.classList.add('px-3', 'cursor-pointer', 'hover:underline');
-    const register = f('a');
-    register.href = "https://blazed.world/register.html";
-    register.innerHTML = "Register";
-    register.classList.add('px-3', 'hover:underline');
-    authWrapper.appendChild(login);
-    authWrapper.appendChild(register);
-    userBar.appendChild(authStatus);
-    userBar.appendChild(authWrapper);
-    return userBar;
-}
-
 function build_menu(config, page){
     const header = f('header');
     header.classList.add('header', 'bg-gradient-to-t', 'from-blue-900', 'to-blue-800');
@@ -144,21 +89,6 @@ function build_menu(config, page){
         listElement.appendChild(menuItem);
         menuList.appendChild(listElement);
     }
-    const userButtonListElement = f('li');
-    const userButton = f('a');
-    userButton.classList.add('cursor-pointer', 'text-white', 'transition', 'hover:text-white/75', 'group');
-    userButton.innerHTML = `
-		<span class="inline-flex text-white">
-	    	<i id="user-bar-icon" class="inline-flex text-white">
-	    		<svg fill="#ffffff" class="inline-flex w-4 h-4" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512.02 319.26"><path d="M5.9 48.96 48.97 5.89c7.86-7.86 20.73-7.84 28.56 0l178.48 178.48L434.5 5.89c7.86-7.86 20.74-7.82 28.56 0l43.07 43.07c7.83 7.84 7.83 20.72 0 28.56l-192.41 192.4-.36.37-43.07 43.07c-7.83 7.82-20.7 7.86-28.56 0l-43.07-43.07-.36-.37L5.9 77.52c-7.87-7.86-7.87-20.7 0-28.56z"/></svg>
-	    	</i>
-	    	&nbsp; &nbsp;
-	    	<span id="toggle-user-bar" class="group-hover:underline">My Blazed</span>
-    	</spam>
-    `;
-    userButton.addEventListener('mouseup', toggle_user_panel);
-    userButtonListElement.appendChild(userButton);
-    menuList.appendChild(userButtonListElement);
     menu.appendChild(menuList);
     menuWrapper.appendChild(menu);
     innerMoreWrapper.appendChild(menuWrapper);
@@ -177,8 +107,6 @@ function build_menu(config, page){
     innerMoreWrapper.appendChild(closeButtonWrapper);
     innerWrapper.appendChild(innerMoreWrapper);
     header.appendChild(innerWrapper);
-    const userBar = build_user_bar();
-    header.appendChild(userBar);
     return header;
 }
 
@@ -242,53 +170,6 @@ function build_header(config, page){
     const menu = build_menu(config, page);
     blz_header.appendChild(mobile_menu);
     blz_header.appendChild(menu);
-    document.body.innerHTML += `
-            <!-- Login Modal -->
-            <div id="login-form" class="hidden absolute w-full items-center">
-                <div id="login-bg" class="absolute w-full h-screen bg-black opacity-75 z-10"></div>
-
-                <div class="relative mx-6 md:mx-auto w-full md:w-1/2 lg:w-1/3 z-20 m-8">
-                    <div class="shadow-lg bg-white rounded-lg p-8">
-                        <div class="flex justify-end mb-6">
-                            <button onmouseup="closeLoginModal();">
-                                <span class="mr-2">Close</span>
-                                <span>
-                                    <i class="fa fa-times"></i>
-                                </span>
-                            </button>
-                        </div>
-
-                        <h1 class="text-center text-2xl text-green-dark">Login</h1>
-
-                        <form class="pt-6 pb-2 my-2">
-                            <div class="mb-4">
-                                <label class="block text-sm font-bold mb-2" for="email">
-                                    Email Address
-                                </label>
-                                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" id="email" type="text" placeholder="Email Address">
-                            </div>
-                            <div class="mb-6">
-                                <label class="block text-sm font-bold mb-2" for="password">
-                                    Password
-                                </label>
-                                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker mb-3" id="password" type="password" placeholder="Password">
-                            </div>
-                            <div class="block md:flex items-center justify-between">
-                                <div>
-                                    <button id="login-button" class="bg-blue-800 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded border-b-4 border-green-darkest" type="button">
-                                        Sign In
-                                    </button>
-                                </div>
-
-                                <div class="mt-4 md:mt-0">
-                                    <a href="#" class="text-green no-underline">Forget Password?</a>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-        </div>
-    `;
     document.body.appendChild(blz_header);
 }
 
