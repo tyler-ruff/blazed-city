@@ -20,6 +20,10 @@
           import { getFirestore, collection, getDocs, query, limit, orderBy, where } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-firestore.js";
           const app = initializeApp(firebaseConfig);
           const db = getFirestore(app);
+          let params = new Proxy(new URLSearchParams(window.location.search), {
+              get: (searchParams, prop) => searchParams.get(prop),
+          });
+          const city = params.c;
 
           /* DB */
           async function getCity(db, city){
