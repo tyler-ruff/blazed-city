@@ -1,73 +1,7 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-
-      <link rel="dns-prefetch" href="//blazed.sirv.com/">
-      <link rel="preconnect" href="https://blazed.sirv.com/">
-
-      <link rel="stylesheet" href="https://www.blazed.city/lib/fire.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
-
-      <script src="https://www.blazed.city/lib/fire.js"></script>
-      <script src="https://www.blazed.city/assets/js/site.blz.js"></script>
-
-      <script src="https://www.blazed.city/assets/js/views/index.blz.js"></script>
-
-      <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-app.js";
-        import { getFirestore, collection, getDocs, query, limit, orderBy, where } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-firestore.js";
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-
-        /* DB */
-        async function getCities(db){
-          const citiesCol = collection(db, 'cities');
-          const snapshot = await getDocs(citiesCol);
-          const citiesList = snapshot.docs.map(doc => doc.data());
-          document.getElementById('loading-spinner').classList.add('hidden');
-          for(let i = 0; i < citiesList.length; i++){
-              document.getElementById('city-list').innerHTML += `
-                <a href="https://www.blazed.city/c/index.html?c=${citiesList[i].slug}">
-                    <div class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8 group">
-                          <div class="space-y-4">
-                              <h3 class="text-2xl font-semibold text-purple-900 group-hover:underline">
-                                ${citiesList[i].name}
-                              </h3>
-                              <p class="mb-6">
-                                ${citiesList[i].desc}
-                              </p>
-                              <span class="block font-medium text-purple-600 group-hover:text-purple-700">
-                                Visit  
-                              </span>
-                          </div>
-                    </div>
-                  </a>
-              `;
-            }
-          }
-
-          getCities(db);
-
-        </script>
-        
-        <!--[if lt IE 9]>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <![endif]-->
-    </head>
-    <body class="">
-      <script>
-        let page = getPage();
-        const config = build_config(siteConfig, 
-        'View the cities of the Blazed Nation.', 
-        page);
-        let pageData = build_routes(page);
-        const blz_app = new Fire(config);
-        create_app(blz_app.config, pageData);
-      </script>
-      <noscript>
-        For the best browsing experience, please enable Javascript.
-      </noscript>
+<html>
+    <body>
+        <p>
+            blazed.city
+        </p>
     </body>
 </html>
