@@ -31,6 +31,7 @@ import { DocumentsComponent } from './pages/documents/documents.component';
 import { RenderMdPipe } from './util/render-md/render-md.pipe';
 import { MdBodyComponent } from './components/md-body/md-body.component';
 import { AreaComponent } from './components/area/area.component';
+import { AllAreasComponent } from './components/all-areas/all-areas.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { AreaComponent } from './components/area/area.component';
     DocumentsComponent,
     RenderMdPipe,
     MdBodyComponent,
-    AreaComponent
+    AreaComponent,
+    AllAreasComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,24 @@
+<h1 class="text-center text-3xl py-7 font-bold">
+    Explore Blazed City
+</h1>
+<div class="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
+    <div class="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <ng-container *ngFor="let area of areas$ | async">
+            <a rel="noopener noreferrer" 
+                href="/explore?area={{ area.index }}" 
+                class="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900">
+                <img role="presentation" 
+                    class="object-cover w-full rounded h-44 dark:bg-gray-500" 
+                    src="https://blazed.sirv.com/blazed.city/areas/area{{ area.index }}.jpg">
+                <div class="p-6 space-y-2">
+                    <h3 class="text-2xl font-semibold group-hover:underline group-focus:underline">
+                        {{ area.name }}
+                    </h3>
+                    <span class="text-md dark:text-gray-400">
+                        Area {{ area.index }}
+                    </span>
+                </div>
+            </a>
+        </ng-container>
+    </div>
+</div>
