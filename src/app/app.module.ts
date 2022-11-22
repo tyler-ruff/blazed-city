@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,16 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideFunctions,getFunctions } from '@angular/fire/functions';
 import { provideStorage,getStorage } from '@angular/fire/storage';
+import { AngularFireStorageModule, BUCKET } from '@angular/fire/compat/storage';
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+
+
+import { ArchiveComponent } from './components/archive/archive.component';
+import { DocumentsComponent } from './pages/documents/documents.component';
+
+import { RenderMdPipe } from './util/render-md/render-md.pipe';
+import { MdBodyComponent } from './components/md-body/md-body.component';
+import { AreaComponent } from './components/area/area.component';
 
 @NgModule({
   declarations: [
@@ -29,12 +40,18 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     FooterComponent,
     NavComponent,
     AboutComponent,
-    ExploreComponent
+    ExploreComponent,
+    ArchiveComponent,
+    DocumentsComponent,
+    RenderMdPipe,
+    MdBodyComponent,
+    AreaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
+    HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the application is stable
@@ -50,6 +67,8 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     provideStorage(() => getStorage())
   ],
   providers: [
+    { provide: BUCKET, useValue: 'gs://blz-one-9e383.appspot.com' },
+    { provide: FIREBASE_OPTIONS, useValue: environment.firebase },
     ScreenTrackingService,UserTrackingService
   ],
   bootstrap: [AppComponent]

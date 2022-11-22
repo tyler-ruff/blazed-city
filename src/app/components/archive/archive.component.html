@@ -1,0 +1,4 @@
+
+<div *ngFor="let document of doc$ | async">
+    <app-md-body [documentId]="did" [type]="document.type"></app-md-body>
+</div>

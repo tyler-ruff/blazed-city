@@ -88,3 +88,46 @@ body {
 h1, h3{
     font-family: 'DM Serif Text', serif;
 }
+
+.markdown h1{
+    font-size: 35px;
+}
+.markdown h2{
+    padding-top:10px;
+    padding-bottom:10px;
+    font-size: 30px;
+}
+.markdown h3{
+    padding-top:10px;
+    padding-bottom: 5px;
+    font-size: 25px;
+}
+.markdown h4{
+    font-size: 20px;
+    padding-top:5px;
+}
+
+.markdown ul {
+    padding:3px;
+    padding-left:25px;
+    margin:2px;
+}
+.markdown li {
+    padding-left:10px;
+    list-style-type: disc;
+}
+
+.markdown a{
+    color: rgb(46, 46, 46);
+}
+.markdown a:hover{
+    text-decoration: underline;
+}
+
+.markdown img{
+    padding-top:10px;
+    padding-bottom:10px;
+    position: relative;
+    margin-left:auto;
+    margin-right:auto;
+}
