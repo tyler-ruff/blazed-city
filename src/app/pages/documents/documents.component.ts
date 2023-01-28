@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
 import { ActivatedRoute } from '@angular/router';
+
+import { AppService } from 'src/app/shared/app.service';
+import { page } from './documents.page';
 
 
 @Component({
@@ -10,9 +12,12 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DocumentsComponent implements OnInit {
 
+  public page = page;
   docId: string | undefined;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private appService: AppService, private route: ActivatedRoute) {
+    appService.setPage(page);
+   }
 
   ngOnInit(): void {
     this.route.queryParams

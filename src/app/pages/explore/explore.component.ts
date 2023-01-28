@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
+import { AppService } from 'src/app/shared/app.service';
+import { page } from './explore.page';
+import { Area } from '../../models/area.model';
+
 import { Firestore, collectionData, collection, query, limit, getDocs, orderBy, where } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 import { ActivatedRoute } from '@angular/router';
-
-import { Area } from '../../models/area.model';
 
 @Component({
   selector: 'app-explore',
@@ -18,10 +20,11 @@ export class ExploreComponent implements OnInit {
   public exploreAll: boolean = false;
   areaId: number = 0;
 
-
+  public page = page;
   private firestore: Firestore;
 
-  constructor(private route: ActivatedRoute, firestore: Firestore) {
+  constructor(private appService: AppService, private route: ActivatedRoute, firestore: Firestore) {
+    appService.setPage(page);
     this.firestore = firestore;
    }
 

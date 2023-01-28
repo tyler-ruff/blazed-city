@@ -8,12 +8,36 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+
+// Services
+import { AppService } from './shared/app.service';
+
+// Pages
+import { HomeComponent } from './pages/home/home.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ExploreComponent } from './pages/explore/explore.component';
+import { DocumentsComponent } from './pages/documents/documents.component';
+import { UnknownComponent } from './pages/unknown/unknown.component';
+
+// Components
+import { LayoutComponent } from './components/layout/layout.component';
 import { NavComponent } from './components/nav/nav.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { LazyLoadDirective } from './lazyload.directive';
-import { AboutComponent } from './pages/about/about.component';
-import { ExploreComponent } from './pages/explore/explore.component';
+
+// Utilities
+import { LazyLoadDirective } from './util/lazyload.directive';
+import { PhoneFormatPipe } from './util/format-phone.pipe';
+import { RelativeTimePipe } from './util/relative-time.pipe';
+import { RenderMdPipe } from './util/render-md.pipe';
+
+// Widgets
+import { ArchiveComponent } from './widgets/archive/archive.component';
+import { MdBodyComponent } from './widgets/md-body/md-body.component';
+import { AreaComponent } from './widgets/area/area.component';
+import { AllAreasComponent } from './widgets/all-areas/all-areas.component';
+
+// Firebase
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
 import { provideAuth,getAuth } from '@angular/fire/auth';
@@ -25,26 +49,23 @@ import { AngularFireStorageModule, BUCKET } from '@angular/fire/compat/storage';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 
 
-import { ArchiveComponent } from './components/archive/archive.component';
-import { DocumentsComponent } from './pages/documents/documents.component';
-
-import { RenderMdPipe } from './util/render-md/render-md.pipe';
-import { MdBodyComponent } from './components/md-body/md-body.component';
-import { AreaComponent } from './components/area/area.component';
-import { AllAreasComponent } from './components/all-areas/all-areas.component';
-
 @NgModule({
   declarations: [
     AppComponent,
     LazyLoadDirective,
+    PhoneFormatPipe,
+    RelativeTimePipe,
+    RenderMdPipe,
+    LayoutComponent,
     HeaderComponent,
     FooterComponent,
     NavComponent,
+    HomeComponent,
     AboutComponent,
     ExploreComponent,
     ArchiveComponent,
     DocumentsComponent,
-    RenderMdPipe,
+    UnknownComponent,
     MdBodyComponent,
     AreaComponent,
     AllAreasComponent
@@ -71,7 +92,8 @@ import { AllAreasComponent } from './components/all-areas/all-areas.component';
   providers: [
     { provide: BUCKET, useValue: 'gs://blz-one-9e383.appspot.com' },
     { provide: FIREBASE_OPTIONS, useValue: environment.firebase },
-    ScreenTrackingService,UserTrackingService
+    ScreenTrackingService,UserTrackingService,
+    AppService
   ],
   bootstrap: [AppComponent]
 })
