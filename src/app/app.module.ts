@@ -26,10 +26,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 // Utilities
-import { LazyLoadDirective } from './util/lazyload.directive';
-import { PhoneFormatPipe } from './util/format-phone.pipe';
-import { RelativeTimePipe } from './util/relative-time.pipe';
-import { RenderMdPipe } from './util/render-md.pipe';
+import { LazyLoadDirective } from './utils/lazyload.directive';
+import { PhoneFormatPipe } from './utils/format-phone.pipe';
+import { RelativeTimePipe } from './utils/relative-time.pipe';
+import { RenderMdPipe } from './utils/render-md.pipe';
 
 // Widgets
 import { ArchiveComponent } from './widgets/archive/archive.component';
