@@ -1,7 +1,0 @@
-[
-    {
-      "origin": ["http://localhost:4200/", "https://www.blz.one/", "https://www.blazed.world/", "https://www.blazed.city/", "https://www.blazed.place/", "https://www.blazed.bond/", "https://www.blazed.cc/"],
-      "method": ["GET"],
-      "maxAgeSeconds": 3600
-    }
-]
