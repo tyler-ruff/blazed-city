@@ -1,3 +1,6 @@
+---
+title: Blazed National Constitution
+---
 # Blazed National Constitution
 
 ## Preamble
