@@ -1,10 +1,14 @@
 # Welcome to the Blazed Nation
+![Blazed Labs "Another dream turned into reality."](https://blazed.sirv.com/blazed-labs/blazed-banner-sm.png)
+
 This is the virtual home of the Blazed Nation, a micronation of federated digital property.
 
 ## Explore the Blazed Nation
 * [National Forum](https://www.facebook.com/groups/blazedforum)
-* [Blazed Government](https://github.com/blazed-nation/blz-gov)
+* [Blazed Government](government/intro)  ([GitHub](https://github.com/blazed-nation/blz-gov))
 * [Woodrow Financial](https://github.com/blazed-nation/woodrow)
+
+---
 
 ## Contributing
 Thank you for investing your time in contributing to our project! 
@@ -13,6 +17,8 @@ Any contribution you make will be reflected on [blazed.city](https://blazed.city
 Read our [Code of Conduct](/code-of-conduct) to keep our community approachable and respectable.
 
 In this guide you will get an overview of the contribution workflow from opening an issue, creating a PR, reviewing, and merging the PR.
+
+![Blazed City Image "Blazed City"](https://blazed.sirv.com/blazed.city/city-art.jpg?w=300&h=300)
 
 ### New contributor guide
 To get an overview of the project, read the README. Here are some resources to help you get started with open source contributions:
@@ -54,7 +60,7 @@ Once you submit your PR, a Docs team member will review your proposal. We may as
 
 #### Your PR is merged!
 
-Congratulations :tada::tada: The GitHub team thanks you :sparkles:.
+*Congratulations* The Blazed team thanks you.
 
 Once your PR is merged, your contributions will be publicly visible on the [GitHub docs](https://docs.github.com/en).
 
@@ -70,3 +76,13 @@ This site can be developed on Windows, however a few potential gotchas need to b
 4. Filename too long error: There is a 260 character limit for a filename when Git is compiled with `msys`. While the suggestions below are not guaranteed to work and could cause other issues, a few workarounds include:
     - Update Git configuration: `git config --system core.longpaths true`
     - Consider using a different Git client on Windows
+
+---
+
+[![Blazed Labs](https://img.shields.io/badge/Blazed-Labs-red?style=for-the-badge&logo=data:image/webp;base64,UklGRgwBAABXRUJQVlA4WAoAAAAQAAAAEwAAEwAAQUxQSJsAAAABgFvb1rLo+3Eyd0lZtOESaeadEHkBELEog5zMfVwbcPc78v3vm+kgIiaA/aPS6nA4XVaJ5hgcHRye9nQ0VgPwXmaCFQBPQZESgOeISP4TeE2KFD6B94yAtg8AXTWt8PDrNkXy74A79hD0fci2lXKVR7mLmExgH8ShnaPogPpZ5Vg3JMxNvwwj2tj4i+Xm58RxlnEls49olHh/CABWUDggSgAAADADAJ0BKhQAFAA+bSyRRaQioZgEAEAGxLOAX7UGAIdtN3AA/vPA0UtZSPblfop///kEdls9BxW6nkyImweTORm+zO2yEn0/AgAA "Blazed Labs")](https://blazedlabs.com/)
+
+---
+
+[&#x21d1; Back to Top](#welcome-to-the-blazed-nation) | [Customer Feedback](https://forms.gle/f9F4SRyfpKdAHJ1R6) | [Invest in Blazed](https://opencollective.com/blazed-nation) | [@blazed-nation](https://github.com/blazed-nation/)
+
+**&copy;2020-2023** [Blazed Labs LLC](https://blazedlabs.com/), [Ruff Management Inc](https://ruff-manage.com/). **All Rights Reserved.**

@@ -10,10 +10,10 @@ copyright: "&copy;2023 Blazed Labs LLC, Ruff Management Inc."
 # Repository
 repo_name: "GitHub"
 repo_url: "https://github.com/tyler-ruff/blazed-city"
-edit_uri: "https://github.com/tyler-ruff/blazed-city/edit/main/docs_sample"
+edit_uri: "https://github.com/tyler-ruff/blazed-city/edit/main/blazed_city"
 
 # Configuration
-docs_dir: "docs_sample"
+docs_dir: "blazed_city"
 theme:
   name: "material"
   language: "en"
@@ -31,7 +31,7 @@ theme:
   #text: 'Ubuntu'
   #code: 'Ubuntu Mono'
   #icon:
-  logo: 'images/Beaker-Dark.svg'
+  logo: 'images/Beaker-White.png'
   favicon: 'assets/images/favicon.ico'
 
 # Extensions
@@ -68,12 +68,10 @@ extra:
 nav:
   - "Home": "index.md"
   - "Code of Conduct": "code-of-conduct.md"
-  - "Getting started":
-      - "Download boilerplate": "getting-started/download-boilerplate.md"
-      - "pipenv": "getting-started/pipenv.md"
-      - "invoke": "getting-started/invoke.md"
-      - "Docker": "getting-started/docker.md"
-      - "pip": "getting-started/pip.md"
+  - "Government":
+      - "Intro": "government/intro.md"
+      - "Constitution": "government/constitution.md"
+      - "Estate Code": "government/estate-code.md"
   - "Hosting and Deployment":
       - "Combinations": "hosting-and-deployment/combinations.md"
       - "Netlify": "hosting-and-deployment/netlify.md"
@@ -84,4 +82,4 @@ nav:
       - "MathJax": "extensions/mathjax.md"
       - "Code Hilite": "extensions/code-hilite.md"
       - "Footnote": "extensions/footnote.md"
-  - "License": "license.md"
+  - "User Agreements": "user-agreements.md"

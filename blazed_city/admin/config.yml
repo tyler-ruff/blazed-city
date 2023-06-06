@@ -1,0 +1,14 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+media_folder: "assets/images/uploads"
+public_folder: "/images/uploads"
+collections:
+  - name: "government"
+    label: "National Government"
+    folder: "blazed_city/government"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
