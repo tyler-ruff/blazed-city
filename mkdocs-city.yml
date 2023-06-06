@@ -73,12 +73,13 @@ nav:
       - "Intro": "government/intro.md"
       - "Constitution": "government/constitution.md"
       - "Estate Code": "government/estate-code.md"
-  - "Market":
-      - "Banking": "market/banking.md"
+  - "Markets":
+      - "Banking Market": "market/banking.md"
       - "Bond Market": "market/bond.md"
       - "Real Estate Market": "market/real-estate.md"
-  - "Extensions":
-      - "MathJax": "extensions/mathjax.md"
-      - "Code Hilite": "extensions/code-hilite.md"
-      - "Footnote": "extensions/footnote.md"
+      - "Bot Market": "market/bot.md"
+  - "Documentation":
+      - "Introduction": "docs/index.md"
+      - "Citizenship": "docs/citizenship.md"
+      - "National Forum": "extensions/forum.md"
   - "User Agreements": "user-agreements.md"
