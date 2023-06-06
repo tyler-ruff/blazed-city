@@ -8,8 +8,8 @@
 * **Who are the Agents?** The agents within this system are government organizations, business organizations, users, and AI/bots.
 
 ## Law
-* [Constitution](government/constitution)
-* [Estate Code](government/estate-code)
+* [Constitution](/government/constitution)
+* [Estate Code](/government/estate-code)
 
 ## Finance
 

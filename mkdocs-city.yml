@@ -54,6 +54,7 @@ plugins:
 # Customization
 extra_javascript:
   - "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"
+  - "https://identity.netlify.com/v1/netlify-identity-widget.js"
 extra_css:
   - "assets/css/custom.css"
 extra:

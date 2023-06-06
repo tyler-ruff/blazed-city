@@ -5,7 +5,7 @@ media_folder: "assets/images/uploads"
 public_folder: "/images/uploads"
 collections:
   - name: "government"
-    label: "National Government"
+    label: "Government Resources"
     folder: "blazed_city/government"
     create: true
     slug: "{{slug}}"
