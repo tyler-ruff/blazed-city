@@ -1,3 +1,8 @@
+---
+title: Blazed National Government
+index: 1
+---
+
 # Blazed National Government
 
 ![Blazed City "Blazed City"](https://blazed.sirv.com/blazed.city/city-art.jpg?w=300&h=300)

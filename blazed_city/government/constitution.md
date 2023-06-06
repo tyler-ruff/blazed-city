@@ -1,5 +1,6 @@
 ---
 title: Blazed National Constitution
+index: 29739
 ---
 # Blazed National Constitution
 

@@ -1,3 +1,8 @@
+---
+title: Blazed National Estate Code
+index: 44970
+---
+
 # Blazed National Estate Code
 
 ## Preamble
