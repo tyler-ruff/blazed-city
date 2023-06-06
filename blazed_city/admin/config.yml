@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: main # Branch to update (optional; defaults to master)
+  branch: dev
 media_folder: "assets/images/uploads"
 public_folder: "/images/uploads"
 collections:
@@ -12,4 +12,12 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Document ID", name: "index", widget: "number"}
+      - {label: "Resource Type", name: "type", widget: "hidden", default: "law"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "market"
+    label: "Trading Market"
+    folder: "blazed_city/market"
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
