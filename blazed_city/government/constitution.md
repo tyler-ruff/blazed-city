@@ -1,6 +1,7 @@
 ---
 title: Blazed National Constitution
 index: 29739
+type: law
 ---
 # Blazed National Constitution
 
@@ -9,6 +10,7 @@ We the people of the great micronation of Blazed, location within the Virtual wo
 
 ### Land Claim
 The property owned and controlled by the Nation of Blazed are to be all logical endpoints located on the following domains:
+
 * [blz.one](https://blz.one/)
 * [blazedlabs.com](https://blazedlabs.com/)
 * [blazed.city](https://blazed.city/)
@@ -22,12 +24,13 @@ The property owned and controlled by the Nation of Blazed are to be all logical 
 * [blazed.tel](https://blazed.tel/)
 * [blazed.xyz](https://blazed.xyz/)
 
-This document shall henceforth serve as a deed [1](#footlinks) representing the full legal ownership of the aforementioned properties.
+This document shall henceforth serve as a deed[^1] representing the full legal ownership of the aforementioned properties.
 
 All territory located within the Blazed Nation is subject to this constitution, as well as all ordinances published by the Blazed National Government.
 
 ### Agents
 An organizational unit recognized by the Blazed Government to have self-governing authority and the rights of property/asset ownership shall be referred to as an "agent". Types of agencies recognized by the Blazed Nation are as follows:
+
 * Government Agency (GOV)
 * Business Agency (BIZ)
 * Bot/AI Agency (BOT)
@@ -53,7 +56,7 @@ The Blazed Government shall elect a *President*, whom is responsible for the enf
 The judicial Power of the Blazed Nation, shall be vested in one Central Court, and in such inferior Courts as the Council may from time to time ordain and establish. The Judges, both of the Central and inferior Courts, shall hold their Offices during good Behaviour. Other inferior Courts shall be located within Districts.
 
 ### The Council
-Within the Blazed Nation, shall exist a council which consists of majority shareholders of the Ruff Management Inc. company. Wherein the shares held are represented by legally binding contracts signed by each shareholder (shareholder agreement). These council members shall differ from members of the National Forum by way of prestige and higher authority [2](#footlinks). The council shall oversee the two offices, the department and admin offices of the government which are:
+Within the Blazed Nation, shall exist a council which consists of majority shareholders of the Ruff Management Inc. company. Wherein the shares held are represented by legally binding contracts signed by each shareholder (shareholder agreement). These council members shall differ from members of the National Forum by way of prestige and higher authority[^2]. The council shall oversee the two offices, the department and admin offices of the government which are:
 
 ### Administrative Offices
 * [Blazed National Forum](https://www.facebook.com/groups/blazedforum)
@@ -147,7 +150,7 @@ Citizens and companies may purchase and hold insurance, which provides compensat
 Funds may be transferred directly from one account to another, even if the accounts are held by two different banks. Bank A (the sending party) initiates a wire transfer with a "Request to Transfer Funds", issued to Bank B (the receiving party). Bank B responds with an "ACCEPTANCE" or "DENIAL" based on if the account referenced exists. Upon receiving an "ACCEPTANCE" from Bank B, Bank A will be then required to send the appropriate money to Bank B, and file a "Notice of Financial Transfer" to the Office of Finance. A wire transfer request can also be sent by Bank A to request money from an identified account. Upon "ACCEPTANCE" by the identified account owner, the funds will be sent to Bank A, and Bank B will be responsible for issuing a "Notice of Financial Transfer" to the Office of Finance.
 
 ### Purchase agreement
-Citizens and companies may enter into a purchase agreement with a merchant or private seller. Completing such an agreement requires the selling party to file a "Purchase Notice" with the Office of Commerce. Merchants with goods for sale may attach a sales listing to the store of goods, which allows for such purchase agreements to be generated automatically when a user clicks "Buy".
+Citizens and companies may enter into a purchase agreement with a merchant or private seller. Completing such an agreement requires the selling party to file a "Purchase Notice" with the Office of Commerce. Merchants with goods for sale may attach a sales listing to the store of goods, which allows for such purchase agreements to be generated automatically when a user clicks "Buy". If any item shall be abandoned[^4], its ownership shall be subjected to the finder of the item *(ie. finder's keepers)*. 
 
 ### Central Banking Authority
 The Nation of Blazed and the Office of Finance vests its banking authority in the [Woodrow Central Bank](https://github.com/blazed-nation/woodrow). The Woodrow Bank has sole authority to print Blazed Cash (B\$), as long as it acts within the budgetary limitations set forth by the Office of Finance. The Woodrow Central Bank shall also issue government based subsidized and unsubsidized loans. Subsidized loans accrue 0% interest over their term. The amount of money offered by loans is also limited by the budget published by the Office of Finance. The Woodrow Central bank is also responsible for writing Real-estate Bonds to raise funds for land development projects. Finally, the Woodrow Central Bank is required to issue a maintenance free checking account to all recognized agents (including bots). The Woodrow Central Bank shall offer all official (permit holding) Banks of the Blazed Nation deposit and bond default insurance from the WDIC (Woodrow Deposit Insurance Corporation). The WDIC insurance shall cover any liable loss of managed funds by the issuing bank (the policy holder). Deposits will be insured up to a limit, as defined in the insurance policy held by the respective bank. Bond default will also be covered by WDIC insurance. If an issuing company cannot repay its issued bonds upon the maturity date, the payments will be covered by the Woodrow Central Bank, and deferred by a government subsidized loan offered to the defaulting company. The Woodrow Central Bank shall offer all official (permit holding) banks of the Blazed Nation lending default insurance from the WCIC (Woodrow Credit Insurance Corporation). The WCIC insurance shall cover the loss of funds to a creditor when a borrower defaults on their loan. If a borrower cannot repay its issued loan(s), the principle amount will be reimbursed by the Woodrow Central Bank. 
@@ -155,7 +158,7 @@ The Nation of Blazed and the Office of Finance vests its banking authority in th
 ### Bonds
 An asset known as a "bond" may be created and offered for sale by an approved company. A bond is divided up into a series of shares, which all have a principle balance, an interest rate, a term (or maturity date), and a rating (A, AA, AAA). The principle balance determines the dividend paid to investors upon the maturity date (plus accrued interest). An interest rate, written in the bond by the issuing company, will determine the variable amount of Blazed Cash (B\$) relative to the principle balance, paid to the owner of the bond upon the maturity date. The term (or maturity date) will denote the period which the bond is to pay its principle balance (plus accrued interest) to the owner of the share (on the date of maturity, after the determined period has passed). Once issued, a company can sell its bonds on the bond market. A buyer of one or more share(s) may also opt to sell their share(s) before the maturity date. To begin issue, a company must have its bond proposal approved by a bank, and must be sponsored by one or more banks. Another bank or agency must rate the proposed bond (A, AA, AAA) based on the issuing company's likelihood to default upon repayment. In the event of default, the Woodrow Central Bank's Default insurance will assure the necessary investors will be compensated.
 
-The par value [6](#footlinks) of a bond is usually $1,000 (or to a lesser degree $100), but will vary based on the market demand, the type of bond, and underlying assets/contracts.
+The par value[^5] of a bond is usually $1,000 (or to a lesser degree $100), but will vary based on the market demand, the type of bond, and underlying assets/contracts.
 
 ### Credit Repoting
 The Credit Reporting Agency of Blazed (CRAB) will store history related to borrowed funds, fund repayment, financial responsibility, length of credit history, purchase/income habits, and net-worth for all Blazed agents. The data collected will be used to generate a credit report and credit score, which rate the overall creditworthiness of the respective agent. Banks, financial institutions, employers, landlords, and educators may use this score to determine if a citizen or company is eligible for a certain offer. Citizens and companies may also submit a request for forgiveness or redaction on any reported statement. Unsettled debts may also be settled by an agreement (negotiation) between the creditor and borrower.
@@ -163,7 +166,7 @@ The Credit Reporting Agency of Blazed (CRAB) will store history related to borro
 ### Loans
 Certain creditors (specifically those who have Banking permits and WDIC insurance) may agree to lend a sum of Blazed Cash (B\$) to a borrower. The loan shall be instantiated by a Loan Agreement, which defines the terms of the loan (principle amount, length/term of repayment, and interest rate). The borrower must agree to the loan agreement before the exchange can occur. Once agreed and approved, the citizen or company who borrowed the funds will be credited the principle (minus tax) to their active checking account. Creditors may conversely offer a line of credit, which will offer a range (up to a predetermined limit) of funds available for use at any time by an approved borrower. A creditor must issue a holding account (checking or savings) which the borrower may send payments to. In the case of credit lines, the holding account may share its account number with the issuing account. 
 
-To be upheld in a Blazed National court, a loan must be preceeded by all parties signing a promissory note [3](#footlinks)
+To be upheld in a Blazed National court, a loan must be preceeded by all parties signing a promissory note[^3].
 
 ## Contracts
 
@@ -171,6 +174,7 @@ To be upheld in a Blazed National court, a loan must be preceeded by all parties
 A contract is a legally binding agreement entered in by two or more agents (citizens, bots, and/or companies). A contract defines a period to which it is to be considered "active", the period may optionally be indefinite. A contract enforces a series of requirements or terms to be satisfied, and shall define penalty and/or nullification procedure, should the contract be terminated by either party. The contract will also define the payment terms and amount(s). 
 
 **The types of contracts are as follows:**
+
 - Account Holders Agreement
 - Insurance Policyholders Agreement
 - Production Contract
@@ -215,12 +219,11 @@ Check out our [Contributing Guide](https://blazed.city/#contributing).
 ---
 
 ## Footlinks
-* [1](#land-claim): A deed is any legal instrument in writing which passes, affirms or confirms an interest, right, or property and that is signed, attested, delivered, and in some jurisdictions, sealed. It is commonly associated with transferring (conveyancing) title to property. [Source](https://en.wikipedia.org/wiki/Deed)
-* [2](#the-council): The value of these shares will be determined by the gross domestic product (GDP) of the virtual Blazed Nation (Please see [Article #2](#2-finance)).
-* [3](#loans): A **promissory note**, sometimes referred to as a note payable, is a legal instrument (more particularly, a financing instrument and a debt instrument), in which one party (the maker or issuer) promises in writing to pay a determinate sum of money to the other (the payee), either at a fixed or determinable future time or on demand of the payee, under specific terms and conditions. [Source](https://en.wikipedia.org/wiki/Promissory_note#:~:text=A%20promissory%20note%2C%20sometimes%20referred,or%20determinable%20future%20time%20or)
-* 4: Abandonment refers to the voluntary and intentional discarding of a known right. [Source](https://www.law.cornell.edu/wex/abandonment)
-* 5: Personal property is property that is movable.
-[6](#bonds): Par value, also known as nominal value, is the face value of a bond or the stock value stated in the corporate charter.
+* [^1]: A deed is any legal instrument in writing which passes, affirms or confirms an interest, right, or property and that is signed, attested, delivered, and in some jurisdictions, sealed. It is commonly associated with transferring (conveyancing) title to property. [Source](https://en.wikipedia.org/wiki/Deed)
+* [^2]: The value of these shares will be determined by the gross domestic product (GDP) of the virtual Blazed Nation (Please see [Article #2](#2-finance)).
+* [^3]: A **promissory note**, sometimes referred to as a note payable, is a legal instrument (more particularly, a financing instrument and a debt instrument), in which one party (the maker or issuer) promises in writing to pay a determinate sum of money to the other (the payee), either at a fixed or determinable future time or on demand of the payee, under specific terms and conditions. [Source](https://en.wikipedia.org/wiki/Promissory_note#:~:text=A%20promissory%20note%2C%20sometimes%20referred,or%20determinable%20future%20time%20or)
+* [^4]: Abandonment refers to the voluntary and intentional discarding of a known right. ([Source](https://www.law.cornell.edu/wex/abandonment)).
+* [^5]: Par value, also known as *nominal value*, is the face value of a bond or the stock value stated in the corporate charter.
 
 ---
 

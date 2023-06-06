@@ -18,10 +18,9 @@ Read our [Code of Conduct](/code-of-conduct) to keep our community approachable 
 
 In this guide you will get an overview of the contribution workflow from opening an issue, creating a PR, reviewing, and merging the PR.
 
-![Blazed City Image "Blazed City"](https://blazed.sirv.com/blazed.city/city-art.jpg?w=300&h=300)
-
 ### New contributor guide
 To get an overview of the project, read the README. Here are some resources to help you get started with open source contributions:
+
 * [Finding ways to contribute to Blazed software](https://github.com/orgs/blazed-nation/discussions/1)
 * [Set up Git](https://docs.github.com/en/get-started/quickstart/set-up-git)
 * [GitHub Flow](https://docs.github.com/en/get-started/quickstart/github-flow)

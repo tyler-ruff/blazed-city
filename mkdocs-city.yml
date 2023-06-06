@@ -10,7 +10,7 @@ copyright: "&copy;2023 Blazed Labs LLC, Ruff Management Inc."
 # Repository
 repo_name: "GitHub"
 repo_url: "https://github.com/tyler-ruff/blazed-city"
-edit_uri: "https://github.com/tyler-ruff/blazed-city/edit/main/blazed_city"
+edit_uri: "https://github.com/tyler-ruff/blazed-city/edit/dev/blazed_city"
 
 # Configuration
 docs_dir: "blazed_city"
@@ -73,12 +73,10 @@ nav:
       - "Intro": "government/intro.md"
       - "Constitution": "government/constitution.md"
       - "Estate Code": "government/estate-code.md"
-  - "Hosting and Deployment":
-      - "Combinations": "hosting-and-deployment/combinations.md"
-      - "Netlify": "hosting-and-deployment/netlify.md"
-      - "GitHub Pages": "hosting-and-deployment/github-pages.md"
-      - "GitLab Pages": "hosting-and-deployment/gitlab-pages.md"
-      - "AWS Amplify Console": "hosting-and-deployment/aws-amplify-console.md"
+  - "Market":
+      - "Banking": "market/banking.md"
+      - "Bond Market": "market/bond.md"
+      - "Real Estate Market": "market/real-estate.md"
   - "Extensions":
       - "MathJax": "extensions/mathjax.md"
       - "Code Hilite": "extensions/code-hilite.md"

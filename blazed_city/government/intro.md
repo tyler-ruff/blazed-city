@@ -1,6 +1,7 @@
 ---
 title: Blazed National Government
 index: 1
+type: homepage
 ---
 
 # Blazed National Government
