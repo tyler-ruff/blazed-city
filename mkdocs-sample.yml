@@ -10,7 +10,7 @@ copyright: "&copy;2023 Blazed Labs LLC, Ruff Management Inc."
 # Repository
 repo_name: "GitHub"
 repo_url: "https://github.com/tyler-ruff/blazed-city"
-edit_uri: "https://github.com/tyler-ruff/blazed-city/edit/master/docs_sample"
+edit_uri: "https://github.com/tyler-ruff/blazed-city/edit/main/docs_sample"
 
 # Configuration
 docs_dir: "docs_sample"

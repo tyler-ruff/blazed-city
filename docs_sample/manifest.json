@@ -1,28 +1,28 @@
 {
-    "short_name": "MkDocs",
-    "name": "MkDocs Material Boilerplate",
-    "description": "MkDocs Material Boilerplate (Starter Kit) - Deploy documentation to hosting platforms (Netlify, GitHub Pages, GitLab Pages, and AWS Amplify Console) with Docker, pipenv, and GitHub Actions.",
+    "short_name": "blazed-city",
+    "name": "Blazed City",
+    "description": "This is the virtual home of the Blazed Nation, a micronation of federated digital property.",
     "lang": "en-US",
     "icons": [
         {
-            "src": "images/graduate-cap.48x48.png",
+            "src": "https://blazed.sirv.com/logo/Beaker-Rainbow.png?w=48&h=48",
             "type": "image/png",
             "sizes": "48x48"
         },
         {
-            "src": "images/graduate-cap.96x96.png",
+            "src": "https://blazed.sirv.com/logo/Beaker-Rainbow.png?w=96&h=96",
             "type": "image/png",
             "sizes": "96x96"
         },
         {
-            "src": "images/graduate-cap.192x192.png",
+            "src": "https://blazed.sirv.com/logo/Beaker-Rainbow.png?w=192&h=192",
             "type": "image/png",
             "sizes": "192x192"
         }
     ],
     "start_url": "index.html",
-    "background_color": "#2196F3",
-    "theme_color": "#2196F3",
+    "background_color": "#3268a8",
+    "theme_color": "#3268a8",
     "display": "standalone",
     "orientation": "portrait-primary",
     "prefer_related_applications": false
