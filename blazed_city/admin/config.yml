@@ -21,3 +21,10 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
+  - name: "docs"
+    label: "Documentation"
+    folder: "blazed_city/docs"
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
