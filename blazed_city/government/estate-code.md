@@ -40,10 +40,11 @@ Each plot must have a unique addressing sequence to differentiate between plots.
 
 ### Zoning
 Each plot shall be ordained a zone by its managing municipality. The available zones are as follows:
-- Residential
-- Commercial
-- Industrial
-- Government
+
+* Residential
+* Commercial
+* Industrial
+* Government
 
 The zone (assigned by a governing body or council) shall enforce restrictions upon the type of development and activity which may occur while one or more party/parties are virtually present (regardless of whether or not that/those party/parties carry-out the activity directly, or if they utilize, or otherwise instruct an AI or BOT user to carry-out or aid in carrying-out the activity/activities).
 
