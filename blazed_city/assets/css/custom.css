@@ -8,3 +8,21 @@ h3 {
     padding: 0rem 0rem 0.5rem 0.5rem !important;
     border-left: solid 2px rgb(70, 150, 236);
 }
+
+body::-webkit-scrollbar{
+    width:10px;
+}
+
+body::-webkit-scrollbar-track{
+    background:#727a8a;
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color:#afb4bd;
+    border-radius:20px;
+    border:1px solid #5b626e;
+}
+
+body::-webkit-scrollbar-thumb:hover{
+    background-color:#5b626e;
+}
