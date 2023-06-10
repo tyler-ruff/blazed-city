@@ -14,6 +14,6 @@ This is the virtual home of the Blazed Nation, a micronation of federated digita
 
 ---
 
-[&#x21d1; Back to Top](#welcome-to-the-blazed-nation) | [Customer Feedback](https://forms.gle/f9F4SRyfpKdAHJ1R6) | [Invest in Blazed](https://opencollective.com/blazed-nation) | [@blazed-nation](https://github.com/blazed-nation/)
+[&#x21d1; Back to Top](#explore_the_blazed_nation) | [Customer Feedback](https://forms.gle/f9F4SRyfpKdAHJ1R6) | [Invest in Blazed](https://opencollective.com/blazed-nation) | [@blazed-nation](https://github.com/blazed-nation/)
 
 **&copy;2020-2023** [Blazed Labs LLC](https://blazedlabs.com/), [Ruff Management Inc](https://ruff-manage.com/). **All Rights Reserved.**
