@@ -5,7 +5,7 @@ This is the virtual home of the Blazed Nation, a micronation of federated digita
 
 ## Explore the Blazed Nation
 * [National Forum](https://www.facebook.com/groups/blazedforum)
-* [Blazed Government](government/intro)  ([GitHub](https://github.com/blazed-nation/blz-gov))
+* [Blazed Government](government)  ([GitHub](https://github.com/blazed-nation/blz-gov))
 * [Woodrow Financial](https://github.com/blazed-nation/woodrow)
 
 ---
