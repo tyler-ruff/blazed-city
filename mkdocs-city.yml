@@ -68,8 +68,6 @@ extra:
 # Page tree
 nav:
   - "Home": "index.md"
-  - "Contrbuting": "contributing.md"
-  - "Code of Conduct": "code-of-conduct.md"
   - "Government":
       - "Intro": "government/index.md"
       - "Constitution": "government/constitution.md"
@@ -83,4 +81,3 @@ nav:
       - "Introduction": "docs/index.md"
       - "Citizenship": "docs/citizenship.md"
       - "National Forum": "docs/forum.md"
-  - "User Agreements": "user-agreements.md"
