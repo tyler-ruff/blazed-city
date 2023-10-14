@@ -9,7 +9,7 @@ type: law
 We the people of the great micronation of Blazed, location within the Virtual world of Blazed, in Order to promote Open Source development, establish Justice, form a more perfect nation, insure domestic Tranquility, provide for the common defence, promote the general Welfare, do ordain and establish this Constitution, with respect to the physical principalities wherein its contents are disseminated.
 
 ### Land Claim
-The property owned and controlled by the Nation of Blazed are to be all logical endpoints located on the following domains:
+*The property owned and controlled by the Nation of Blazed are to be all logical endpoints located on the following domains:*
 
 * [blz.one](https://blz.one/)
 * [blazedlabs.com](https://blazedlabs.com/)
@@ -24,7 +24,7 @@ The property owned and controlled by the Nation of Blazed are to be all logical 
 * [blazed.tel](https://blazed.tel/)
 * [blazed.xyz](https://blazed.xyz/)
 
-This document shall henceforth serve as a deed[^1] representing the full legal ownership of the aforementioned properties.
+*This document shall henceforth serve as a deed[^1] representing the full legal ownership of the aforementioned properties.*
 
 All territory located within the Blazed Nation is subject to this constitution, as well as all ordinances published by the Blazed National Government.
 
@@ -43,7 +43,7 @@ All agents, which have been organized with consent from the Blazed Nation, shall
 All agents shall be issued a private ID, presented in an MD5 hash, which is recommended to be kept secret, it will only be needed on government websites and forms. All agents will also be issued a public ID number, presented in the format: [AGENT-TYPE]-[AGENT-ID], which is to be used when identifying to employers, service providers, creditors, and other citizens.
 
 ### Citizenship
-Blazed Nation shall extend to certain members, whom each hold stake in Blazed projects, as well as being maintainers and contributors to Blazed projects, the rights and privilege to be recognized as valued members of our decentralized team of experts. These citizens may have the right to own equity in Blazed Labs LLC, Ruff Management Inc., and Concrete Games LLC. We reserve the right to change the [terms of service](https://www.blazedlabs.com/tos) and [privacy policy](https://www.blazedlabs.com/privacy) for citizens of the Blazed Nation.
+Blazed Nation shall extend to certain members, whom each hold stake in Blazed projects, as well as being maintainers and contributors to Blazed projects, the rights and privilege to be recognized as valued members of our decentralized team of experts. These citizens may have the right to own equity in Blazed Labs LLC, Ruff Management Inc., and Concrete Games LLC. We reserve the right to change the [terms of service](https://www.blazedlabs.com/terms) and [privacy policy](https://www.blazedlabs.com/privacy) for citizens of the Blazed Nation.
 
 Those who maintain citizenship with the Blazed Nation shall be granted rights to operate and perform tasks within the Blazed Nation. Each citizen shall be given a bank account by the Woodrow Central Bank upon their registration. A citizen will also be given a unit within a standard subsidized apartment, which they can also sell if they purchase another property. A citizen may own property, assets, permits, and businesses which operate within the Blazed Nation. A citizen may also hold/own financial assets such as a CD (certificate of deposit), stock share, bond, line of credit, and bank account. A citizen may also establish employment with a company within the Blazed Nation. Citizens who cannot afford meals will receive subsidized meals from the Blazed National Government.
 
@@ -109,6 +109,7 @@ The official currency of the Blazed Nation is Blazed Cash. Blazed Cash shall be 
 
 ### Taxation
 The Blazed National Government reserves the right to impose taxation upon its businesses and citizens. The taxes are to be established by ordinances published by the Blazed National Government, as well as local City and District governments. The types of taxation are as follows:
+
 * Sales tax - Taxation imposed upon the sale of goods (assets) or services by merchants. Paid upon close of sale by buyer.
 * Property tax - Taxation imposed upon the owners or property. Paid yearly by the property owner.
 * Income tax - Taxation imposed upon employees for funds gained through lawful employment.
@@ -218,15 +219,6 @@ Check out our [Contributing Guide](https://blazed.city/#contributing).
 
 ---
 
-## Footlinks
-* [^1]: A deed is any legal instrument in writing which passes, affirms or confirms an interest, right, or property and that is signed, attested, delivered, and in some jurisdictions, sealed. It is commonly associated with transferring (conveyancing) title to property. [Source](https://en.wikipedia.org/wiki/Deed)
-* [^2]: The value of these shares will be determined by the gross domestic product (GDP) of the virtual Blazed Nation (Please see [Article #2](#2-finance)).
-* [^3]: A **promissory note**, sometimes referred to as a note payable, is a legal instrument (more particularly, a financing instrument and a debt instrument), in which one party (the maker or issuer) promises in writing to pay a determinate sum of money to the other (the payee), either at a fixed or determinable future time or on demand of the payee, under specific terms and conditions. [Source](https://en.wikipedia.org/wiki/Promissory_note#:~:text=A%20promissory%20note%2C%20sometimes%20referred,or%20determinable%20future%20time%20or)
-* [^4]: Abandonment refers to the voluntary and intentional discarding of a known right. ([Source](https://www.law.cornell.edu/wex/abandonment)).
-* [^5]: Par value, also known as *nominal value*, is the face value of a bond or the stock value stated in the corporate charter.
-
----
-
 ![Footer Image "Blazed City"](https://blazed.sirv.com/blazed.city/city-art.jpg?w=300&h=300)
 
 ## Questions? Comments? Concerns?
@@ -241,5 +233,13 @@ Check out our [Contributing Guide](https://blazed.city/#contributing).
 **&copy;2020-2023** [Blazed Labs LLC](https://blazedlabs.com/), [Ruff Management Inc](https://ruff-manage.com/). **All Rights Reserved.**
 
 <!-- Internal References -->
+---
+
+* [^1]: A deed is any legal instrument in writing which passes, affirms or confirms an interest, right, or property and that is signed, attested, delivered, and in some jurisdictions, sealed. It is commonly associated with transferring (conveyancing) title to property. [Source](https://en.wikipedia.org/wiki/Deed)
+* [^2]: The value of these shares will be determined by the gross domestic product (GDP) of the virtual Blazed Nation (Please see [Article #2](#2-finance)).
+* [^3]: A **promissory note**, sometimes referred to as a note payable, is a legal instrument (more particularly, a financing instrument and a debt instrument), in which one party (the maker or issuer) promises in writing to pay a determinate sum of money to the other (the payee), either at a fixed or determinable future time or on demand of the payee, under specific terms and conditions. [Source](https://en.wikipedia.org/wiki/Promissory_note#:~:text=A%20promissory%20note%2C%20sometimes%20referred,or%20determinable%20future%20time%20or)
+* [^4]: Abandonment refers to the voluntary and intentional discarding of a known right. ([Source](https://www.law.cornell.edu/wex/abandonment)).
+* [^5]: Par value, also known as *nominal value*, is the face value of a bond or the stock value stated in the corporate charter.
+
 <!-- External References -->
 
