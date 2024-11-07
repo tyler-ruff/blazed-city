@@ -15,13 +15,8 @@ We the people of the great micronation of Blazed, location within the Virtual wo
 * [blazedlabs.com](https://blazedlabs.com/)
 * [blazed.city](https://blazed.city/)
 * [blazed.company](https://blazed.company/)
-* [blazed.contact](https://blazed.contact/)
 * [blazed.dev](https://blazed.dev/)
-* [blazed.quest](https://blazed.quest/)
-* [blazed.sbs](https://blazed.sbs/)
 * [blazed.space](https://blazed.space/)
-* [blazed.systems](https://blazed.systems/)
-* [blazed.tel](https://blazed.tel/)
 * [blazed.xyz](https://blazed.xyz/)
 
 *This document shall henceforth serve as a deed[^1] representing the full legal ownership of the aforementioned properties.*
