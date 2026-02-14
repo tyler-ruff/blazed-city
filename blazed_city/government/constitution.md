@@ -228,8 +228,6 @@ The service provider is required to deliver a single or series of predefined "re
 
 Anyone can contribute to our projects! We don't just hire programmers, also project managers, designers, UX/UI, testers, and many more roles are available. Super flexable scheduling, super lax work culture, you'll love it here!
 
-Check out our [Contributing Guide](https://blazed.city/#contributing).
-
 - - -
 
 ## Attribution
